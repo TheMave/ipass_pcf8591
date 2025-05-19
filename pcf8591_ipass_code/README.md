@@ -2,7 +2,7 @@
 
 - **VSCode** installeren
 - **PlatformIO plugin** installeren
-- Lokaal **platformio.ini.txt kopiëren naar platformio.ini** en de configuratie (de **COM port** van je Arduino) daar aanpassen.
+- In **platformio.ini** en de configuratie (de **COM port** van je Arduino) aanpassen.
 - selecteer als volgt in de **terminal** wat je wilt bouwen en uploaden:
   **pio run -e knipper_snel -t upload**
 
