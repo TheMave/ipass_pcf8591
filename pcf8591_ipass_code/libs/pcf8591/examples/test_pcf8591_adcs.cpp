@@ -1,0 +1,143 @@
+#include "Arduino.h"
+#include <Wire.h>
+#include <pcf8591.h>
+#include <serialInput.h>
+
+// We willen geen magic constants, dus definiëren we alle constants hier.
+const uint8_t   PCF8591_address = 0x48; // Mits A0, A1 en A2 met ground 
+                                        // verbonden zijn.
+const int       serialBaudRate  = 9600;
+const int       maxNofChannels  = 4;    // Dit is het aantal kanalen van de 
+
+namespace hs = hogeschool;  // shorthand
+const uint8_t nA2A1A0_adresSelectorBits = 0b000;
+hs::PCF8591 pcf8591(nA2A1A0_adresSelectorBits);
+
+void testApartLezenVanADCs()
+{
+  Serial.println();
+  Serial.println("**************************");
+  Serial.println("Test: Apart lezen van ADCs");
+  Serial.println("**************************");
+
+  pcf8591.setAinToChannelMapping(hs::PCF8591::AinToChannelMapping::AIN_N_TO_CHANNEL_N);
+
+  while(true)  
+  {
+    for (int i = 0; i < maxNofChannels; i++) 
+    {
+      uint8_t value = pcf8591.readChannel(i);
+            
+      // Print de waarde naar de serial monitor
+      Serial.print("AIN");
+      Serial.print(i);
+      Serial.print(": ");
+      Serial.println(value);
+      if((i%4)==3) Serial.println("--------");
+    }
+
+    // Wacht even, anders komt er meer data naar de serial monitor dan die
+    // kan verwerken. (bovendien vliegt het dan te snel voorbij om te kunnen lezen)
+    bool bStopToetsIngedrukt = hs::SerialInput::wachtEnCheckToets(/*toets*/ 'v', /*nofMilliseconden*/ 2000);
+    if(bStopToetsIngedrukt) break;
+  }
+}
+
+void testCyclischLezenVanADCs()
+{
+  Serial.println();
+  Serial.println("*****************************");
+  Serial.println("Test: Cyclisch lezen van ADCs");
+  Serial.println("*****************************");
+
+  pcf8591.setAinToChannelMapping(hs::PCF8591::AinToChannelMapping::AIN_N_TO_CHANNEL_N);
+
+  bool bStopToetsIngedrukt = false;
+  while(true)  
+  {
+    uint8_t nChannel=0;
+    
+    uint8_t value = pcf8591.readCyclical(nChannel);
+          
+    // Print de waarde naar de serial monitor
+    Serial.print("AIN");
+    Serial.print(nChannel);
+    Serial.print(": ");
+    Serial.println(value);
+
+    if(nChannel==3) 
+    {
+      Serial.println("--------");
+      // Wacht even, anders komt er meer data naar de serial monitor dan die
+      // kan verwerken. (bovendien vliegt het dan te snel voorbij om te kunnen lezen)
+      bStopToetsIngedrukt = hs::SerialInput::wachtEnCheckToets(/*toets*/ 'v', /*nofMilliseconden*/ 2000);
+    }
+
+    if(bStopToetsIngedrukt) break;
+  }
+}
+
+void testGestreamedLezenVanADCs()
+{
+  Serial.println();
+  Serial.println("*******************************");
+  Serial.println("Test: Gestreamed lezen van ADCs");
+  Serial.println("*******************************");
+
+  pcf8591.setAinToChannelMapping(hs::PCF8591::AinToChannelMapping::AIN_N_TO_CHANNEL_N);
+
+  bool bStopToetsIngedrukt = false;
+  while(true)  
+  {
+    for (int nChannel = 0; nChannel < maxNofChannels; nChannel++)
+    {
+      // Laten we steeds een 5x het betreffende kanaal gestreamed uitlezen.
+      Serial.println("----------------------------");
+      Serial.print("5x AN");
+      Serial.print(nChannel);
+      Serial.println(" gestreamed lezen:");
+      for (int j = 0; j < 5; j++) 
+      {
+        // Bij de huidige mapping is de index van het kanaal gelijk aan die
+        // van de Analog input pin.
+        uint8_t value = pcf8591.readChannel(nChannel,/*bStreaming*/true);
+              
+        // Print de waarde naar de serial monitor
+        Serial.print("AIN");
+        Serial.print(nChannel);
+        Serial.print(": ");
+        Serial.println(value);
+      }
+      pcf8591.endStreaming();
+      
+      // Wacht even, anders komt er meer data naar de serial monitor dan die
+      // kan verwerken. (bovendien vliegt het dan te snel voorbij om te kunnen lezen)
+      bStopToetsIngedrukt = hs::SerialInput::wachtEnCheckToets(/*toets*/ 'v', /*nofMilliseconden*/ 2000);
+      if(bStopToetsIngedrukt) break;
+    }
+    if(bStopToetsIngedrukt) break;
+  }
+}
+
+void setup() 
+{
+  Serial.begin(serialBaudRate);
+  Wire.begin();
+}
+
+void loop() 
+{
+  Serial.println("");
+  Serial.println("******************");
+  Serial.println("******************");
+  Serial.println("Start van de Tests");
+  Serial.println("******************");
+  Serial.println("******************");
+  Serial.println("");
+  Serial.println("(geef steeds invoer 'v' voor de volgende test)");
+  Serial.println("");
+
+  testApartLezenVanADCs();
+  testGestreamedLezenVanADCs();
+  testCyclischLezenVanADCs();
+}

@@ -1,0 +1,113 @@
+<mxfile host="Electron" modified="2025-05-19T10:08:09.558Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="2n6MDFCi_Rv8gRoQTznl" version="22.0.2" type="device">
+  <diagram name="Pagina-1" id="XfBzZY4i_DLTNI2Wesuo">
+    <mxGraphModel dx="848" dy="950" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" parent="1" source="uxiBA7X4ZixmnXRsglPF-2" target="3Ek_wGbUgmRVW5QWUHS5-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="225" y="1000" />
+              <mxPoint x="225" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uxiBA7X4ZixmnXRsglPF-2" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;PCF8591&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&amp;nbsp;+ PCF8591 (address : uint8_t)&lt;br&gt;&amp;nbsp;+ setAinToChannelMapping (mapping : AinToChannelMapping)&lt;br&gt;&amp;nbsp;+ readChannel (channel:uint8_t, bStreaming : bool) : uint8_t&lt;br&gt;&amp;nbsp;+ readCyclical (channelThatWasRead : uint8_t&amp;amp;) : uint8_t&lt;br&gt;&amp;nbsp;+ writeDAC (value:uint8_t, bStreaming:bool)&lt;br&gt;&amp;nbsp;+ disableAnalogOutput ()&lt;br&gt;&amp;nbsp;+ endStreaming ()&lt;br&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="50" y="880" width="350" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;br&gt;AinToChannelMapping&amp;nbsp;&amp;nbsp;&lt;br&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;font-size: 10px; margin: 0px; text-align: center;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;font-size: 10px; margin: 0px; text-align: center;&quot;&gt;&lt;i&gt;literals&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 8px;&quot;&gt;&amp;nbsp;AIN_N_TO_CHANNEL_N&lt;br&gt;&amp;nbsp;AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2&lt;br&gt;&amp;nbsp;AIN0_1_TO_CHANNEL_0_1__AIN2_MINUS_AIN3_TO_CHANNEL_2&lt;br&gt;&amp;nbsp;AIN1_MINUS_AIN0_TO_CHANNEL_0__AIN2_MINUS_AIN3__TO_CHANNEL_1&lt;/p&gt;" style="shape=rect;html=1;overflow=fill;verticalAlign=top;align=left;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="113" y="1113" width="450" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-3" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&amp;lt;&amp;lt;valueType&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;uint8_t&lt;/b&gt;&lt;/p&gt;" style="shape=rect;html=1;overflow=fill;verticalAlign=top;align=left;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="283" y="1038" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-5" style="edgeStyle=none;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontSize=16;endArrow=block;endFill=0;startSize=12;endSize=12;" parent="1" source="3Ek_wGbUgmRVW5QWUHS5-1" target="3Ek_wGbUgmRVW5QWUHS5-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="185" y="1040" as="sourcePoint" />
+            <mxPoint x="184.5" y="999.6199999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-6" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;b&gt;IDAC&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&amp;nbsp;+ writeDAC (dacIndex:uint8_t, value:uint16_t, bStreaming:bool)&lt;br&gt;&amp;nbsp;+ writeDACsCyclical (value:uint16_t)&lt;br&gt;&amp;nbsp;+ disableAnalogOuput(dacIndex:uint8_t)&lt;br&gt;&amp;nbsp;+ getNofDacs () : uint8_t&lt;br&gt;&lt;br&gt;&amp;nbsp;+ endStreaming ()" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="54" y="60" width="360" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-10" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;b&gt;IADC&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&amp;nbsp;+ readADC (adcIndex:uint8_t, bStreaming : bool) : uint16_t&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;+ readADCsCyclical (adcThatWasRead : uint8_t&amp;amp;) : uint16_t&lt;br&gt;&amp;nbsp;+ getNofADCs () : uint8_t&lt;br&gt;&lt;br&gt;&amp;nbsp;+ endStreaming ()" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="260" y="250" width="350" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-11" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;b&gt;IStreaming&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&amp;nbsp;+ endStreaming ()" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="575" y="40" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontSize=16;endArrow=block;endFill=0;startSize=12;endSize=12;dashed=1;" parent="1" source="3Ek_wGbUgmRVW5QWUHS5-6" target="3Ek_wGbUgmRVW5QWUHS5-11" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="565" y="495" as="sourcePoint" />
+            <mxPoint x="565" y="460" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="630" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontSize=16;endArrow=block;endFill=0;startSize=12;endSize=12;dashed=1;" parent="1" source="3Ek_wGbUgmRVW5QWUHS5-10" target="3Ek_wGbUgmRVW5QWUHS5-11" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="235" y="170" as="sourcePoint" />
+            <mxPoint x="425" y="110" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="480" y="160" />
+              <mxPoint x="630" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-14" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;GenericPCF8591&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&amp;nbsp;+&amp;nbsp;&lt;span style=&quot;border-color: var(--border-color); text-align: center;&quot;&gt;Generic_PCF8591&lt;/span&gt;(address : uint8_t)&lt;br&gt;&lt;br&gt;&amp;nbsp;+ writeDAC (dacIndex:uint8_t, value:uint16_t, bStreaming:bool)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;+ writeDACsCyclical (value:uint16_t)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;+ disableAnalogOuput(dacIndex:uint8_t)&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;+ getNofDacs () : uint8_t&lt;br&gt;&lt;br&gt;&amp;nbsp;+ readADC (adcIndex:uint8_t, bStreaming : bool) : uint16_t&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;+ readADCsCyclical (adcThatWasRead : uint8_t&amp;amp;) : uint16_t&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;+ getNofADCs () : uint8_t&lt;br&gt;&lt;br&gt;&amp;nbsp;+ readADCdiff (adcDiffIndex:uint8_t, bStreaming : bool) : int16_t&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;+ readADCdiffsCyclical (adcDiffThatWasRead : uint8_t&amp;amp;) : int16_t&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;+ getNofADCdiffs () : uint8_t&lt;br&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;+ endStreaming ()" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="46" y="560" width="360" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontSize=16;endArrow=block;endFill=0;startSize=12;endSize=12;dashed=1;" parent="1" source="3Ek_wGbUgmRVW5QWUHS5-14" target="3Ek_wGbUgmRVW5QWUHS5-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="235" y="170" as="sourcePoint" />
+            <mxPoint x="425" y="110" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="225" y="500" />
+              <mxPoint x="225" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontSize=16;endArrow=block;endFill=0;startSize=12;endSize=12;dashed=1;" parent="1" source="3Ek_wGbUgmRVW5QWUHS5-14" target="3Ek_wGbUgmRVW5QWUHS5-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="235" y="350" as="sourcePoint" />
+            <mxPoint x="235" y="280" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="225" y="510" />
+              <mxPoint x="320" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-17" value="" style="edgeStyle=none;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamondThin;endFill=1;startSize=12;endSize=12;fontSize=11;labelBackgroundColor=none;spacingLeft=-9;spacingTop=-4;" parent="1" source="uxiBA7X4ZixmnXRsglPF-2" target="3Ek_wGbUgmRVW5QWUHS5-14" edge="1">
+          <mxGeometry x="-0.6593" y="10" relative="1" as="geometry">
+            <mxPoint x="-10" y="1030" as="sourcePoint" />
+            <mxPoint x="-10" y="990" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-19" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;b&gt;IADCdiff&lt;br&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&amp;nbsp;+ readADCdiff (adcDiffIndex:uint8_t, bStreaming : bool) : int16_t&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&amp;nbsp;+ readADCdiffsCyclical (adcDiffThatWasRead : uint8_t&amp;amp;) : int16_t&lt;br&gt;&amp;nbsp;+ getNofADCdiffs () : uint8_t&lt;br&gt;&lt;br&gt;&amp;nbsp;+ endStreaming ()" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="450" y="430" width="360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontSize=16;endArrow=block;endFill=0;startSize=12;endSize=12;dashed=1;" parent="1" source="3Ek_wGbUgmRVW5QWUHS5-19" target="3Ek_wGbUgmRVW5QWUHS5-11" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="435" y="340" as="sourcePoint" />
+            <mxPoint x="435" y="110" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="630" y="290" />
+              <mxPoint x="630" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Ek_wGbUgmRVW5QWUHS5-21" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontSize=16;endArrow=block;endFill=0;startSize=12;endSize=12;dashed=1;" parent="1" source="3Ek_wGbUgmRVW5QWUHS5-14" target="3Ek_wGbUgmRVW5QWUHS5-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="235" y="570" as="sourcePoint" />
+            <mxPoint x="435" y="480" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="225" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
