@@ -1,0 +1,53 @@
+\doxysection{hogeschool\+::DACs\+Tester Class Reference}
+\hypertarget{classhogeschool_1_1_d_a_cs_tester}{}\label{classhogeschool_1_1_d_a_cs_tester}\index{hogeschool::DACsTester@{hogeschool::DACsTester}}
+
+
+Hulpklasse voor het testen van DAC functionaliteit van een klasse die de interface \doxylink{classhogeschool_1_1_i_d_a_c}{IDAC} implementeert.  
+
+
+
+
+{\ttfamily \#include $<$DACs\+Tester.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhogeschool_1_1_d_a_cs_tester_addebb96c2fc399fbb64e3711b616d0ee}{DACs\+Tester}} (\mbox{\hyperlink{classhogeschool_1_1_i_d_a_c}{IDAC}} \&dac\+Chip, uint8\+\_\+t nof\+Dacs, uint16\+\_\+t sample\+Freq\+Khz)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classhogeschool_1_1_d_a_cs_tester_a482a68979706b34a325421fcbd456154}\label{classhogeschool_1_1_d_a_cs_tester_a482a68979706b34a325421fcbd456154} 
+void {\bfseries setup} ()
+\begin{DoxyCompactList}\small\item\em setup initialiseert de tests. \end{DoxyCompactList}\item 
+\Hypertarget{classhogeschool_1_1_d_a_cs_tester_a4a40ea8a3e4a2ddea54cadc7420a2c34}\label{classhogeschool_1_1_d_a_cs_tester_a4a40ea8a3e4a2ddea54cadc7420a2c34} 
+void {\bfseries loop} ()
+\begin{DoxyCompactList}\small\item\em loop voert de tests uit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Hulpklasse voor het testen van DAC functionaliteit van een klasse die de interface \doxylink{classhogeschool_1_1_i_d_a_c}{IDAC} implementeert. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classhogeschool_1_1_d_a_cs_tester_addebb96c2fc399fbb64e3711b616d0ee}\index{hogeschool::DACsTester@{hogeschool::DACsTester}!DACsTester@{DACsTester}}
+\index{DACsTester@{DACsTester}!hogeschool::DACsTester@{hogeschool::DACsTester}}
+\doxysubsubsection{\texorpdfstring{DACsTester()}{DACsTester()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_d_a_cs_tester_addebb96c2fc399fbb64e3711b616d0ee} 
+hogeschool\+::\+DACs\+Tester\+::\+DACs\+Tester (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classhogeschool_1_1_i_d_a_c}{IDAC}} \&}]{dac\+Chip}{, }\item[{uint8\+\_\+t}]{nof\+Dacs}{, }\item[{uint16\+\_\+t}]{sample\+Freq\+Khz}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dac\+Chip} & Reference naar een dac\+Chip object, welke de interface \doxylink{classhogeschool_1_1_i_d_a_c}{IDAC} implementeert. \\
+\hline
+{\em nof\+Dacs} & Specificeert het aantal dac output pinnen welke aanwezig zijn op de dac chip. \\
+\hline
+{\em sample\+Freq\+Khz} & Specificeert de sample frequentie in kilohertz. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libs/generic\+Converters/src/test\+Helpers/\mbox{\hyperlink{_d_a_cs_tester_8h}{DACs\+Tester.\+h}}\item 
+libs/generic\+Converters/src/test\+Helpers/DACs\+Tester.\+cpp\end{DoxyCompactItemize}

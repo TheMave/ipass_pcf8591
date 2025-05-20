@@ -1,12 +1,11 @@
-// Author: Marius Versteegen
-// Copyright Marius Versteegen 2025.
-// Distributed under the Boost Software License, Version 1.0.
-// (See accompanying file LICENSE.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+/**
+ * @file pcf8591.h
+ * @brief driver voor de pcf8591 AD/DA converter chip.
+ * @author Marius Versteegen
+ * @date 2025-05-20
+ */
 
-/// @file
-/// \brief
-/// Contains the declaration for the PCF8591 class
-///
+/// (See accompanying file LICENSE.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 
 #pragma once
 #include <Arduino.h>
@@ -17,6 +16,10 @@
 /// name-clashes met third party code.
 namespace hogeschool 
 {
+    /**
+     * @class PCF8591
+     * @brief Driver die de functionaliteit van de pcf8591 chip ontsluit.
+     */
     class PCF8591
     {
     public:
@@ -24,7 +27,7 @@ namespace hogeschool
         // naar de kanalen.
 
     /** 
-     * @brief AIN to channel mapping selection enum
+     * @brief enum voor AIN to channel mapping keuze
      * @details
      * AIN_N_TO_CHANNEL_N 
      * -> Elke Analoge input wordt 1 op 1 gemapt naar één kanaal.
@@ -101,6 +104,7 @@ namespace hogeschool
      * Via deze parameter kan de mapping worden gespecificeerd.
      */
         void    setAinToChannelMapping(AinToChannelMapping mapping);
+
         uint8_t readChannel(uint8_t channel, bool bStreaming = false);
         uint8_t readCyclical(uint8_t& channelThatWasRead);
         void    writeDAC(uint8_t value, bool bStreaming = false);

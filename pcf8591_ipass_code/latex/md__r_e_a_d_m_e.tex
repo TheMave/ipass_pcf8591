@@ -1,0 +1,18 @@
+\chapter{Gebruik met Platform\+IO}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Gebruik met PlatformIO@{Gebruik met PlatformIO}}
+\label{md__r_e_a_d_m_e_autotoc_md4}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md4}%
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{VSCode}} installeren
+\item {\bfseries{Platform\+IO plugin}} installeren
+\item Lokaal {\bfseries{platformio.\+ini.\+txt kopiëren naar platformio.\+ini}} en de configuratie (de {\bfseries{COM port}} van je Arduino) daar aanpassen.
+\item selecteer als volgt in de {\bfseries{terminal}} wat je wilt bouwen en uploaden\+: {\bfseries{pio run -\/e knipper\+\_\+snel -\/t upload}}
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{\texorpdfstring{NB\+:}{NB\+:}}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyItemize}
+\item Via {\bfseries{platformio.\+ini}} worden je {\bfseries{.vscode bestanden}} automatisch geconfigureerd. (soms moet je daarvoor even {\bfseries{F1-\/\texorpdfstring{$>$}{>}Developer Reload Window}} activeren in VSCode)
+\item Als je wilt {\bfseries{includen uit subfolders van src}}, dan kun je dat doen door die subfolder in de include ervoor te zetten. Bijvoorbeeld\+: \#include \texorpdfstring{$<$}{<}{\bfseries{test\+Helpers}}/\+ADCs\+Tester.h\texorpdfstring{$>$}{>} 
+\end{DoxyItemize}

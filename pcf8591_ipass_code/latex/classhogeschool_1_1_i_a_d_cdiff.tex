@@ -1,0 +1,106 @@
+\doxysection{hogeschool\+::IADCdiff Class Reference}
+\hypertarget{classhogeschool_1_1_i_a_d_cdiff}{}\label{classhogeschool_1_1_i_a_d_cdiff}\index{hogeschool::IADCdiff@{hogeschool::IADCdiff}}
+Inheritance diagram for hogeschool\+::IADCdiff\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classhogeschool_1_1_i_a_d_cdiff}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff_a3628672d81352fdeb957a29d42cb09e9}{read\+ADCdiff}} (uint8\+\_\+t adc\+Diff\+Index, bool b\+Streaming)=0
+\begin{DoxyCompactList}\small\item\em Lees de verschilwaarde uit een specifieke ADC-\/input-\/paar. \end{DoxyCompactList}\item 
+virtual int16\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff_a9faa270c781aa765e64f0570f0556b23}{read\+ADCdiffs\+Cyclical}} (uint8\+\_\+t \&adc\+Diff\+That\+Was\+Read)=0
+\begin{DoxyCompactList}\small\item\em Lees cyclisch de verschilwaarden uit alle ADC-\/input-\/paartjes. Dus de eerste call leest uit het ADC-\/input-\/paar met index 0. Dat paar zit op pinnen AIN0 en AIN1. De tweede leest uit het volgende paar, etc. Na lezen uit het ADC-\/input-\/paar met de hoogste index is het ADC-\/input-\/paar met index 0 weer aan de beurt. \end{DoxyCompactList}\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff_aacc004e837478ff4d6074f50944e2301}{get\+Nof\+ADCdiffs}} ()=0
+\begin{DoxyCompactList}\small\item\em Retourneer het aantal ADC-\/input-\/paartjes op de chip. Dus het aantal Analoge inputs gedeeld door 2. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff_af15186f7c615fef6f5e91df2f3986117}{end\+Streaming}} ()=0
+\begin{DoxyCompactList}\small\item\em Beeindig de huidige stream door de lopende I2C transactie af te sluiten. De I2C bus is dan weer vrij voor ander gebruik. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhogeschool_1_1_i_a_d_cdiff_af15186f7c615fef6f5e91df2f3986117}\index{hogeschool::IADCdiff@{hogeschool::IADCdiff}!endStreaming@{endStreaming}}
+\index{endStreaming@{endStreaming}!hogeschool::IADCdiff@{hogeschool::IADCdiff}}
+\doxysubsubsection{\texorpdfstring{endStreaming()}{endStreaming()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_i_a_d_cdiff_af15186f7c615fef6f5e91df2f3986117} 
+virtual void hogeschool\+::\+IADCdiff\+::end\+Streaming (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Beeindig de huidige stream door de lopende I2C transactie af te sluiten. De I2C bus is dan weer vrij voor ander gebruik. 
+
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_streaming_a47ca8332d6aa0c0256b78cea0f6435be}{hogeschool\+::\+IStreaming}}.
+
+
+
+Implemented in \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_add9d059ecb13d79863577b01c7580c67}{hogeschool\+::\+Generic\+PCF8591}}.
+
+\Hypertarget{classhogeschool_1_1_i_a_d_cdiff_aacc004e837478ff4d6074f50944e2301}\index{hogeschool::IADCdiff@{hogeschool::IADCdiff}!getNofADCdiffs@{getNofADCdiffs}}
+\index{getNofADCdiffs@{getNofADCdiffs}!hogeschool::IADCdiff@{hogeschool::IADCdiff}}
+\doxysubsubsection{\texorpdfstring{getNofADCdiffs()}{getNofADCdiffs()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_i_a_d_cdiff_aacc004e837478ff4d6074f50944e2301} 
+virtual uint8\+\_\+t hogeschool\+::\+IADCdiff\+::get\+Nof\+ADCdiffs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retourneer het aantal ADC-\/input-\/paartjes op de chip. Dus het aantal Analoge inputs gedeeld door 2. 
+
+
+
+Implemented in \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_a22386ab3bb342d91d953eea8a98edea9}{hogeschool\+::\+Generic\+PCF8591}}.
+
+\Hypertarget{classhogeschool_1_1_i_a_d_cdiff_a3628672d81352fdeb957a29d42cb09e9}\index{hogeschool::IADCdiff@{hogeschool::IADCdiff}!readADCdiff@{readADCdiff}}
+\index{readADCdiff@{readADCdiff}!hogeschool::IADCdiff@{hogeschool::IADCdiff}}
+\doxysubsubsection{\texorpdfstring{readADCdiff()}{readADCdiff()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_i_a_d_cdiff_a3628672d81352fdeb957a29d42cb09e9} 
+virtual uint16\+\_\+t hogeschool\+::\+IADCdiff\+::read\+ADCdiff (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adc\+Diff\+Index}{, }\item[{bool}]{b\+Streaming}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Lees de verschilwaarde uit een specifieke ADC-\/input-\/paar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dac\+Index} & Index van het ADC-\/input-\/paar (beginnend bij 0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+16-\/bit verschilwaarde die wordt gelezen. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Streaming} & Indien streaming, wordt na het lezen van de value de I2C transactie niet afgesloten, zodat eropvolgende read\+ADCdiff calls maximaal efficient kunnen zijn. Je moet dan wel als je eenmaal klaar bent met de read\+ADCdiff commando\textquotesingle{}s, zelf \doxylink{classhogeschool_1_1_i_a_d_cdiff_af15186f7c615fef6f5e91df2f3986117}{end\+Streaming()} aanroepen. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_a48b90f10df87827579bc12ab998efa81}{hogeschool\+::\+Generic\+PCF8591}}.
+
+\Hypertarget{classhogeschool_1_1_i_a_d_cdiff_a9faa270c781aa765e64f0570f0556b23}\index{hogeschool::IADCdiff@{hogeschool::IADCdiff}!readADCdiffsCyclical@{readADCdiffsCyclical}}
+\index{readADCdiffsCyclical@{readADCdiffsCyclical}!hogeschool::IADCdiff@{hogeschool::IADCdiff}}
+\doxysubsubsection{\texorpdfstring{readADCdiffsCyclical()}{readADCdiffsCyclical()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_i_a_d_cdiff_a9faa270c781aa765e64f0570f0556b23} 
+virtual int16\+\_\+t hogeschool\+::\+IADCdiff\+::read\+ADCdiffs\+Cyclical (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{adc\+Diff\+That\+Was\+Read}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Lees cyclisch de verschilwaarden uit alle ADC-\/input-\/paartjes. Dus de eerste call leest uit het ADC-\/input-\/paar met index 0. Dat paar zit op pinnen AIN0 en AIN1. De tweede leest uit het volgende paar, etc. Na lezen uit het ADC-\/input-\/paar met de hoogste index is het ADC-\/input-\/paar met index 0 weer aan de beurt. 
+
+\begin{DoxyReturn}{Returns}
+16-\/bit verschilwaarde die wordt gelezen. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Dit commando werkt streaming. Roep dus nadat je klaar bent met read\+ADCdiffs\+Cyclical calls de functie \doxylink{classhogeschool_1_1_i_a_d_cdiff_af15186f7c615fef6f5e91df2f3986117}{end\+Streaming()} aan. 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_abbe851793272c8ac7f6eb04424198a61}{hogeschool\+::\+Generic\+PCF8591}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libs/generic\+Converters/src/\mbox{\hyperlink{_i_a_d_cdiff_8h}{IADCdiff.\+h}}\end{DoxyCompactItemize}

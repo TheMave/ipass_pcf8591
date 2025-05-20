@@ -1,0 +1,28 @@
+\doxysection{IDAC.\+h}
+\hypertarget{_i_d_a_c_8h_source}{}\label{_i_d_a_c_8h_source}\index{libs/genericConverters/src/IDAC.h@{libs/genericConverters/src/IDAC.h}}
+\mbox{\hyperlink{_i_d_a_c_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_i_streaming_8h}{IStreaming.h}}>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacehogeschool}{hogeschool}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhogeschool_1_1_i_d_a_c}{IDAC}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classhogeschool_1_1_i_streaming}{IStreaming}}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhogeschool_1_1_i_d_a_c_a3118325d39a1fae7a6d9f1bf3ca0b7f4}{writeDAC}}\ (uint8\_t\ dacIndex,\ uint16\_t\ value,\ \textcolor{keywordtype}{bool}\ bStreaming)\ =\ 0;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhogeschool_1_1_i_d_a_c_a47bc6ca56e6363992b9075f5dddab5eb}{writeDACsCyclical}}\ (uint16\_t\&\ value)\ =\ 0;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhogeschool_1_1_i_d_a_c_a1ea9c15bb63b32f375607690b289a81a}{disableAnalogOutput}}()\ =\ 0;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ uint8\_t\ \mbox{\hyperlink{classhogeschool_1_1_i_d_a_c_af83a667009d82eefd2ee370274f6fb35}{getNofDACs}}()\ =\ 0;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhogeschool_1_1_i_d_a_c_a6b7ce9580952f1c958e5055ccd306814}{endStreaming}}()\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \};}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}

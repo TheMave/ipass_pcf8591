@@ -1,0 +1,41 @@
+\doxysection{libs/generic\+Converters Directory Reference}
+\hypertarget{dir_355bdf456054ec5dcb761034915c819f}{}\label{dir_355bdf456054ec5dcb761034915c819f}\index{libs/genericConverters Directory Reference@{libs/genericConverters Directory Reference}}
+\doxysubsubsection*{Directories}
+\begin{DoxyCompactItemize}
+\item 
+directory \mbox{\hyperlink{dir_51d28398cec2b5e66965269279b5a8df}{src}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{README.md_autotoc_md1}{}\doxysubsection{\texorpdfstring{Inleiding}{Inleiding}}\label{README.md_autotoc_md1}
+Deze folder bevat declaraties voor abstracte intefaces van een aantal typen AD en DA converters. Door de functionaliteit van converter-\/chips via deze interfaces toegankelijk te maken, kun je ze later eenvoudig vervangen door andere chips, zonder dat je de code van je applicatie hoeft aan te passen.\hypertarget{README.md_autotoc_md2}{}\doxysubsection{\texorpdfstring{Voorbeeld}{Voorbeeld}}\label{README.md_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{/**********************************************************************/}}
+\DoxyCodeLine{\textcolor{comment}{//\ Voorbeeld\ van\ applicatie\ met\ PCF8591,\ welke\ IADC\ en\ IDAC\ gebruikt:}}
+\DoxyCodeLine{\textcolor{comment}{/**********************************************************************/}}
+\DoxyCodeLine{GenericPCF8591\ genericPCF8591;}
+\DoxyCodeLine{IDAC\&\ dacChip(genericPCF8591);}
+\DoxyCodeLine{IADC\&\ adcChip(genericPCF8591);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//..\ gebruik\ de\ dacChip\ en\ adcChip\ in\ je\ applicatie,\ bijvoorbeeld:}}
+\DoxyCodeLine{int16\_t\ adcValue\ =\ adcChip.readADC(\textcolor{comment}{/*adcIndex*/}\ 0,\ \textcolor{comment}{/*streaming*/}\ \textcolor{keyword}{false});}
+\DoxyCodeLine{dacChip.writeDAC(\textcolor{comment}{/*dacIndex*/}\ 0,\ adcValue,\ \textcolor{comment}{/*bStreaming*/}\ \textcolor{keyword}{false});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/**********************************************************************/}}
+\DoxyCodeLine{\textcolor{comment}{//\ Als\ de\ PCF8591\ is\ uitverkocht,\ of\ je\ wilt\ om\ andere\ redenen\ andere}}
+\DoxyCodeLine{\textcolor{comment}{//\ chips\ gebruiken:}}
+\DoxyCodeLine{\textcolor{comment}{/**********************************************************************/}}
+\DoxyCodeLine{GenericLTC2604\ genericLTC2604;}
+\DoxyCodeLine{GenericADS1115\ genericADS1115;}
+\DoxyCodeLine{IDAC\&\ dacChip(genericLTC2604);}
+\DoxyCodeLine{IADC\&\ adcChip(genericADS1115);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//..\ Je\ applicatie\ kan\ dan\ hetzelfde\ blijven:}}
+\DoxyCodeLine{int16\_t\ adcValue\ =\ adcChip.readADC(\textcolor{comment}{/*adcIndex*/}\ 0,\ \textcolor{comment}{/*streaming*/}\ \textcolor{keyword}{false});}
+\DoxyCodeLine{dacChip.writeDAC(\textcolor{comment}{/*dacIndex*/}\ 0,\ adcValue,\ \textcolor{comment}{/*bStreaming*/}\ \textcolor{keyword}{false});}
+
+\end{DoxyCode}
+ \hypertarget{README.md_autotoc_md3}{}\doxysubsection{\texorpdfstring{Testen}{Testen}}\label{README.md_autotoc_md3}
+Je ziet het ook gedemonstreerd in de klassen ADCs\+Tester en DACs\+Tester. Daar staan tests in voor de functionaliteiten, zonder dat ze afhankelijk zijn van een specifieke chip. 

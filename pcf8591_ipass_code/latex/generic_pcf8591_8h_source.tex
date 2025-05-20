@@ -1,0 +1,54 @@
+\doxysection{generic\+Pcf8591.\+h}
+\hypertarget{generic_pcf8591_8h_source}{}\label{generic_pcf8591_8h_source}\index{libs/pcf8591/src/genericPcf8591.h@{libs/pcf8591/src/genericPcf8591.h}}
+\mbox{\hyperlink{generic_pcf8591_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Author:\ Marius\ Versteegen}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Copyright\ Marius\ Versteegen\ 2025.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ Distributed\ under\ the\ Boost\ Software\ License,\ Version\ 1.0.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ (See\ accompanying\ file\ LICENSE.txt\ or\ copy\ at\ http://www.boost.org/LICENSE\_1\_0.txt)}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_i_a_d_c_8h}{IADC.h}}>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_i_a_d_cdiff_8h}{IADCdiff.h}}>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_i_d_a_c_8h}{IDAC.h}}>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pcf8591_8h}{pcf8591.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacehogeschool}{hogeschool}}\ }
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_abcd0b8d4c3f996d16aaff4f320856d1f}{GenericPCF8591}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classhogeschool_1_1_i_a_d_c}{IADC}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff}{IADCdiff}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classhogeschool_1_1_i_d_a_c}{IDAC}}}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591}{PCF8591}}\ \_pcf8591;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ nofADCs\ =\ 4;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ nof\ ADCs\ that\ PCF8591\ has.}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ nofADCdiffs\ =\ nofADCs/2;\ \textcolor{comment}{//\ nof\ ADC\ pairs\ that\ PCF8591\ has.}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ nofDACs\ =\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ nof\ DACs\ that\ PCF8591\ has.}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ genericBits\ =\ 16;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ PCF8591Bits\ =\ 8;\ \ \textcolor{comment}{//\ bits\ per\ value\ on\ PCF8491.}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ bitShift\ =\ genericBits-\/PCF8591Bits;\ \textcolor{comment}{//\ voor\ resolutie\ normalisatie}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_abcd0b8d4c3f996d16aaff4f320856d1f}{GenericPCF8591}}(uint8\_t\ bitsA2A1A0);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_ad267c5936f5d21a0708136a25414cbb7}{readADC}}\ (uint8\_t\ adcIndex,\ \textcolor{keywordtype}{bool}\ bStreaming)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00052\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_af6776c9a94cf2c4480c2b32cab304b4f}{readADCsCyclical}}\ (uint8\_t\&\ adcThatWasRead)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_afe2e587cc6e58c0ba267d46b53196403}{getNofADCs}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_a48b90f10df87827579bc12ab998efa81}{readADCdiff}}\ (uint8\_t\ adcDiffIndex,\ \textcolor{keywordtype}{bool}\ bStreaming)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00057\ \ \ \ \ int16\_t\ \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_abbe851793272c8ac7f6eb04424198a61}{readADCdiffsCyclical}}\ (uint8\_t\&\ adcDiffThatWasRead)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00058\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_a22386ab3bb342d91d953eea8a98edea9}{getNofADCdiffs}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_a53c569f9e0db1cf7aec9e91a7e57ccd6}{writeDAC}}\ (uint8\_t\ dacIndex,\ uint16\_t\ value,\ \textcolor{keywordtype}{bool}\ bStreaming)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_a7aa5f7bd076b5f0d0dbbb5e415127b07}{writeDACsCyclical}}\ (uint16\_t\&\ value)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_ab26458287c35b4aeeb9e0c1293b06e49}{disableAnalogOutput}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_ab0f94d586c513057f0c693c662292bf1}{getNofDACs}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ IStreaming}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_add9d059ecb13d79863577b01c7580c67}{endStreaming}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00068\ \ \ \ \ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \}\ \textcolor{comment}{//\ end\ namespace\ hogeschool}}
+
+\end{DoxyCode}

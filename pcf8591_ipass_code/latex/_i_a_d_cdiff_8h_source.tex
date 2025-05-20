@@ -1,0 +1,26 @@
+\doxysection{IADCdiff.\+h}
+\hypertarget{_i_a_d_cdiff_8h_source}{}\label{_i_a_d_cdiff_8h_source}\index{libs/genericConverters/src/IADCdiff.h@{libs/genericConverters/src/IADCdiff.h}}
+\mbox{\hyperlink{_i_a_d_cdiff_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <Arduino.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_i_streaming_8h}{IStreaming.h}}>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacehogeschool}{hogeschool}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff}{IADCdiff}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classhogeschool_1_1_i_streaming}{IStreaming}}}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ uint16\_t\ \mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff_a3628672d81352fdeb957a29d42cb09e9}{readADCdiff}}\ (uint8\_t\ adcDiffIndex,\ \textcolor{keywordtype}{bool}\ bStreaming)\ =\ 0;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ int16\_t\ \mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff_a9faa270c781aa765e64f0570f0556b23}{readADCdiffsCyclical}}\ (uint8\_t\&\ adcDiffThatWasRead)\ =\ 0;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ uint8\_t\ \mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff_aacc004e837478ff4d6074f50944e2301}{getNofADCdiffs}}()\ =\ 0;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff_af15186f7c615fef6f5e91df2f3986117}{endStreaming}}()\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \};}
+\DoxyCodeLine{00064\ \}}
+
+\end{DoxyCode}

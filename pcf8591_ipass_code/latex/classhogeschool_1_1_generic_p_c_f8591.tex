@@ -1,0 +1,239 @@
+\doxysection{hogeschool\+::Generic\+PCF8591 Class Reference}
+\hypertarget{classhogeschool_1_1_generic_p_c_f8591}{}\label{classhogeschool_1_1_generic_p_c_f8591}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+Inheritance diagram for hogeschool\+::Generic\+PCF8591\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.962963cm]{classhogeschool_1_1_generic_p_c_f8591}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_abcd0b8d4c3f996d16aaff4f320856d1f}{Generic\+PCF8591}} (uint8\+\_\+t bits\+A2\+A1\+A0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_ad267c5936f5d21a0708136a25414cbb7}{read\+ADC}} (uint8\+\_\+t adc\+Index, bool b\+Streaming) override
+\begin{DoxyCompactList}\small\item\em \doxylink{classhogeschool_1_1_i_a_d_c}{IADC}. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_af6776c9a94cf2c4480c2b32cab304b4f}{read\+ADCs\+Cyclical}} (uint8\+\_\+t \&adc\+That\+Was\+Read) override
+\begin{DoxyCompactList}\small\item\em Lees cyclisch waarden uit alle ADC-\/inputs. Dus de eerste call leest uit de ADC-\/input met index 0. De tweede leest uit de volgende, etc. Na lezen uit de ADC-\/input met de hoogste index is de ADC input met index 0 weer aan de beurt. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_afe2e587cc6e58c0ba267d46b53196403}{get\+Nof\+ADCs}} () override
+\begin{DoxyCompactList}\small\item\em Retourneer het aantal ADC-\/inputs op de chip. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_a48b90f10df87827579bc12ab998efa81}{read\+ADCdiff}} (uint8\+\_\+t adc\+Diff\+Index, bool b\+Streaming) override
+\begin{DoxyCompactList}\small\item\em \doxylink{classhogeschool_1_1_i_a_d_cdiff}{IADCdiff}. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_abbe851793272c8ac7f6eb04424198a61}{read\+ADCdiffs\+Cyclical}} (uint8\+\_\+t \&adc\+Diff\+That\+Was\+Read) override
+\begin{DoxyCompactList}\small\item\em Lees cyclisch de verschilwaarden uit alle ADC-\/input-\/paartjes. Dus de eerste call leest uit het ADC-\/input-\/paar met index 0. Dat paar zit op pinnen AIN0 en AIN1. De tweede leest uit het volgende paar, etc. Na lezen uit het ADC-\/input-\/paar met de hoogste index is het ADC-\/input-\/paar met index 0 weer aan de beurt. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_a22386ab3bb342d91d953eea8a98edea9}{get\+Nof\+ADCdiffs}} () override
+\begin{DoxyCompactList}\small\item\em Retourneer het aantal ADC-\/input-\/paartjes op de chip. Dus het aantal Analoge inputs gedeeld door 2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_a53c569f9e0db1cf7aec9e91a7e57ccd6}{write\+DAC}} (uint8\+\_\+t dac\+Index, uint16\+\_\+t value, bool b\+Streaming) override
+\begin{DoxyCompactList}\small\item\em \doxylink{classhogeschool_1_1_i_d_a_c}{IDAC}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_a7aa5f7bd076b5f0d0dbbb5e415127b07}{write\+DACs\+Cyclical}} (uint16\+\_\+t \&value) override
+\begin{DoxyCompactList}\small\item\em Schrijf cyclisch waarden naar alle DAC-\/kanalen. Dus de eerste call naar het DAC kanaal met index 0. De tweede naar het volgende DAC kanaal, etc. Na schrijven naar het DAC kanaal met de hoogste index is het DAC kanaal met index 0 weer aan de beurt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_ab26458287c35b4aeeb9e0c1293b06e49}{disable\+Analog\+Output}} () override
+\begin{DoxyCompactList}\small\item\em Zet de analoge output van de DAC in tri-\/state mode, bijvoorbeeld om stroom te besparen. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_ab0f94d586c513057f0c693c662292bf1}{get\+Nof\+DACs}} () override
+\begin{DoxyCompactList}\small\item\em Retourneer het aantal DACs op de chip. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhogeschool_1_1_generic_p_c_f8591_add9d059ecb13d79863577b01c7580c67}{end\+Streaming}} () override
+\begin{DoxyCompactList}\small\item\em Beeindig de huidige stream door de lopende I2C transactie af te sluiten. De I2C bus is dan weer vrij voor ander gebruik. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classhogeschool_1_1_generic_p_c_f8591_abcd0b8d4c3f996d16aaff4f320856d1f}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}!GenericPCF8591@{GenericPCF8591}}
+\index{GenericPCF8591@{GenericPCF8591}!hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+\doxysubsubsection{\texorpdfstring{GenericPCF8591()}{GenericPCF8591()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_generic_p_c_f8591_abcd0b8d4c3f996d16aaff4f320856d1f} 
+hogeschool\+::\+Generic\+PCF8591\+::\+Generic\+PCF8591 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{bits\+A2\+A1\+A0}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bits\+A2\+A1\+A0} & De pinnen A2, A1 en A0 van de chip kunnen gebruikt worden om een uniek I2C adres in te stellen.\\
+\hline
+\end{DoxyParams}
+Als bijvoorbeeld A2 en A1 zijn verbonden met supply en A0 met ground, dient bits\+A2\+A1\+A0=0xb110 worden meegegeven. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhogeschool_1_1_generic_p_c_f8591_ab26458287c35b4aeeb9e0c1293b06e49}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}!disableAnalogOutput@{disableAnalogOutput}}
+\index{disableAnalogOutput@{disableAnalogOutput}!hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+\doxysubsubsection{\texorpdfstring{disableAnalogOutput()}{disableAnalogOutput()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_generic_p_c_f8591_ab26458287c35b4aeeb9e0c1293b06e49} 
+void hogeschool\+::\+Generic\+PCF8591\+::disable\+Analog\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Zet de analoge output van de DAC in tri-\/state mode, bijvoorbeeld om stroom te besparen. 
+
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_d_a_c_a1ea9c15bb63b32f375607690b289a81a}{hogeschool\+::\+IDAC}}.
+
+\Hypertarget{classhogeschool_1_1_generic_p_c_f8591_add9d059ecb13d79863577b01c7580c67}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}!endStreaming@{endStreaming}}
+\index{endStreaming@{endStreaming}!hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+\doxysubsubsection{\texorpdfstring{endStreaming()}{endStreaming()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_generic_p_c_f8591_add9d059ecb13d79863577b01c7580c67} 
+void hogeschool\+::\+Generic\+PCF8591\+::end\+Streaming (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Beeindig de huidige stream door de lopende I2C transactie af te sluiten. De I2C bus is dan weer vrij voor ander gebruik. 
+
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_a_d_c_a34d46ee2221ee2825113e33c5694255a}{hogeschool\+::\+IADC}}.
+
+\Hypertarget{classhogeschool_1_1_generic_p_c_f8591_a22386ab3bb342d91d953eea8a98edea9}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}!getNofADCdiffs@{getNofADCdiffs}}
+\index{getNofADCdiffs@{getNofADCdiffs}!hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+\doxysubsubsection{\texorpdfstring{getNofADCdiffs()}{getNofADCdiffs()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_generic_p_c_f8591_a22386ab3bb342d91d953eea8a98edea9} 
+uint8\+\_\+t hogeschool\+::\+Generic\+PCF8591\+::get\+Nof\+ADCdiffs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retourneer het aantal ADC-\/input-\/paartjes op de chip. Dus het aantal Analoge inputs gedeeld door 2. 
+
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff_aacc004e837478ff4d6074f50944e2301}{hogeschool\+::\+IADCdiff}}.
+
+\Hypertarget{classhogeschool_1_1_generic_p_c_f8591_afe2e587cc6e58c0ba267d46b53196403}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}!getNofADCs@{getNofADCs}}
+\index{getNofADCs@{getNofADCs}!hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+\doxysubsubsection{\texorpdfstring{getNofADCs()}{getNofADCs()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_generic_p_c_f8591_afe2e587cc6e58c0ba267d46b53196403} 
+uint8\+\_\+t hogeschool\+::\+Generic\+PCF8591\+::get\+Nof\+ADCs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retourneer het aantal ADC-\/inputs op de chip. 
+
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_a_d_c_aee6f7dea588d41fe53ef41a64ba610ca}{hogeschool\+::\+IADC}}.
+
+\Hypertarget{classhogeschool_1_1_generic_p_c_f8591_ab0f94d586c513057f0c693c662292bf1}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}!getNofDACs@{getNofDACs}}
+\index{getNofDACs@{getNofDACs}!hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+\doxysubsubsection{\texorpdfstring{getNofDACs()}{getNofDACs()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_generic_p_c_f8591_ab0f94d586c513057f0c693c662292bf1} 
+uint8\+\_\+t hogeschool\+::\+Generic\+PCF8591\+::get\+Nof\+DACs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retourneer het aantal DACs op de chip. 
+
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_d_a_c_af83a667009d82eefd2ee370274f6fb35}{hogeschool\+::\+IDAC}}.
+
+\Hypertarget{classhogeschool_1_1_generic_p_c_f8591_ad267c5936f5d21a0708136a25414cbb7}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}!readADC@{readADC}}
+\index{readADC@{readADC}!hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+\doxysubsubsection{\texorpdfstring{readADC()}{readADC()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_generic_p_c_f8591_ad267c5936f5d21a0708136a25414cbb7} 
+uint16\+\_\+t hogeschool\+::\+Generic\+PCF8591\+::read\+ADC (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adc\+Index}{, }\item[{bool}]{b\+Streaming}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{classhogeschool_1_1_i_a_d_c}{IADC}. 
+
+\begin{DoxyNote}{Note}
+De overige interfaces zijn gelijk aan die van de abtracte base classes \doxylink{classhogeschool_1_1_i_a_d_c}{IADC}, \doxylink{classhogeschool_1_1_i_a_d_cdiff}{IADCdiff}, \doxylink{classhogeschool_1_1_i_d_a_c}{IDAC} en \doxylink{classhogeschool_1_1_i_streaming}{IStreaming}. De documentatie ervan is daar te vinden. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_a_d_c_ab2f7cbc39781959797310a714456ffa9}{hogeschool\+::\+IADC}}.
+
+\Hypertarget{classhogeschool_1_1_generic_p_c_f8591_a48b90f10df87827579bc12ab998efa81}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}!readADCdiff@{readADCdiff}}
+\index{readADCdiff@{readADCdiff}!hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+\doxysubsubsection{\texorpdfstring{readADCdiff()}{readADCdiff()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_generic_p_c_f8591_a48b90f10df87827579bc12ab998efa81} 
+uint16\+\_\+t hogeschool\+::\+Generic\+PCF8591\+::read\+ADCdiff (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adc\+Diff\+Index}{, }\item[{bool}]{b\+Streaming}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{classhogeschool_1_1_i_a_d_cdiff}{IADCdiff}. 
+
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff_a3628672d81352fdeb957a29d42cb09e9}{hogeschool\+::\+IADCdiff}}.
+
+\Hypertarget{classhogeschool_1_1_generic_p_c_f8591_abbe851793272c8ac7f6eb04424198a61}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}!readADCdiffsCyclical@{readADCdiffsCyclical}}
+\index{readADCdiffsCyclical@{readADCdiffsCyclical}!hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+\doxysubsubsection{\texorpdfstring{readADCdiffsCyclical()}{readADCdiffsCyclical()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_generic_p_c_f8591_abbe851793272c8ac7f6eb04424198a61} 
+int16\+\_\+t hogeschool\+::\+Generic\+PCF8591\+::read\+ADCdiffs\+Cyclical (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{adc\+Diff\+That\+Was\+Read}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Lees cyclisch de verschilwaarden uit alle ADC-\/input-\/paartjes. Dus de eerste call leest uit het ADC-\/input-\/paar met index 0. Dat paar zit op pinnen AIN0 en AIN1. De tweede leest uit het volgende paar, etc. Na lezen uit het ADC-\/input-\/paar met de hoogste index is het ADC-\/input-\/paar met index 0 weer aan de beurt. 
+
+\begin{DoxyReturn}{Returns}
+16-\/bit verschilwaarde die wordt gelezen. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Dit commando werkt streaming. Roep dus nadat je klaar bent met read\+ADCdiffs\+Cyclical calls de functie \doxylink{classhogeschool_1_1_generic_p_c_f8591_add9d059ecb13d79863577b01c7580c67}{end\+Streaming()} aan. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_a_d_cdiff_a9faa270c781aa765e64f0570f0556b23}{hogeschool\+::\+IADCdiff}}.
+
+\Hypertarget{classhogeschool_1_1_generic_p_c_f8591_af6776c9a94cf2c4480c2b32cab304b4f}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}!readADCsCyclical@{readADCsCyclical}}
+\index{readADCsCyclical@{readADCsCyclical}!hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+\doxysubsubsection{\texorpdfstring{readADCsCyclical()}{readADCsCyclical()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_generic_p_c_f8591_af6776c9a94cf2c4480c2b32cab304b4f} 
+int16\+\_\+t hogeschool\+::\+Generic\+PCF8591\+::read\+ADCs\+Cyclical (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{adc\+That\+Was\+Read}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Lees cyclisch waarden uit alle ADC-\/inputs. Dus de eerste call leest uit de ADC-\/input met index 0. De tweede leest uit de volgende, etc. Na lezen uit de ADC-\/input met de hoogste index is de ADC input met index 0 weer aan de beurt. 
+
+\begin{DoxyReturn}{Returns}
+16-\/bit waarde die uit de ADC wordt gelezen. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Dit commando werkt streaming. Roep dus nadat je klaar bent met read\+ADCs\+Cyclical calls de functie \doxylink{classhogeschool_1_1_generic_p_c_f8591_add9d059ecb13d79863577b01c7580c67}{end\+Streaming()} aan. 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_a_d_c_aaa1b5bc5315ace3433f35d8ef5873168}{hogeschool\+::\+IADC}}.
+
+\Hypertarget{classhogeschool_1_1_generic_p_c_f8591_a53c569f9e0db1cf7aec9e91a7e57ccd6}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}!writeDAC@{writeDAC}}
+\index{writeDAC@{writeDAC}!hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+\doxysubsubsection{\texorpdfstring{writeDAC()}{writeDAC()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_generic_p_c_f8591_a53c569f9e0db1cf7aec9e91a7e57ccd6} 
+void hogeschool\+::\+Generic\+PCF8591\+::write\+DAC (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dac\+Index}{, }\item[{uint16\+\_\+t}]{value}{, }\item[{bool}]{b\+Streaming}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{classhogeschool_1_1_i_d_a_c}{IDAC}. 
+
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_d_a_c_a3118325d39a1fae7a6d9f1bf3ca0b7f4}{hogeschool\+::\+IDAC}}.
+
+\Hypertarget{classhogeschool_1_1_generic_p_c_f8591_a7aa5f7bd076b5f0d0dbbb5e415127b07}\index{hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}!writeDACsCyclical@{writeDACsCyclical}}
+\index{writeDACsCyclical@{writeDACsCyclical}!hogeschool::GenericPCF8591@{hogeschool::GenericPCF8591}}
+\doxysubsubsection{\texorpdfstring{writeDACsCyclical()}{writeDACsCyclical()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_generic_p_c_f8591_a7aa5f7bd076b5f0d0dbbb5e415127b07} 
+void hogeschool\+::\+Generic\+PCF8591\+::write\+DACs\+Cyclical (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Schrijf cyclisch waarden naar alle DAC-\/kanalen. Dus de eerste call naar het DAC kanaal met index 0. De tweede naar het volgende DAC kanaal, etc. Na schrijven naar het DAC kanaal met de hoogste index is het DAC kanaal met index 0 weer aan de beurt. 
+
+\begin{DoxyNote}{Note}
+Dit commando werkt streaming. Roep dus nadat je klaar bent met write\+DACs\+Cyclical calls de functie \doxylink{classhogeschool_1_1_generic_p_c_f8591_add9d059ecb13d79863577b01c7580c67}{end\+Streaming()} aan. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & 16-\/bit waarde die naar de DAC wordt gestuurd. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_d_a_c_a47bc6ca56e6363992b9075f5dddab5eb}{hogeschool\+::\+IDAC}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libs/pcf8591/src/\mbox{\hyperlink{generic_pcf8591_8h}{generic\+Pcf8591.\+h}}\item 
+libs/pcf8591/src/generic\+Pcf8591.\+cpp\end{DoxyCompactItemize}

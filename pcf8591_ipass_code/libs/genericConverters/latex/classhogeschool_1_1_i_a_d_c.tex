@@ -1,0 +1,100 @@
+\doxysection{hogeschool\+::IADC Class Reference}
+\hypertarget{classhogeschool_1_1_i_a_d_c}{}\label{classhogeschool_1_1_i_a_d_c}\index{hogeschool::IADC@{hogeschool::IADC}}
+
+
+Abstracte interface voor het uitlezen van ADC-\/inputs.  
+
+
+
+
+{\ttfamily \#include $<$IADC.\+h$>$}
+
+Inheritance diagram for hogeschool\+::IADC\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classhogeschool_1_1_i_a_d_c}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_i_a_d_c_ab2f7cbc39781959797310a714456ffa9}{read\+ADC}} (uint8\+\_\+t adc\+Index, bool b\+Streaming)=0
+\begin{DoxyCompactList}\small\item\em Lees een waarde uit een specifieke ADC-\/input. \end{DoxyCompactList}\item 
+virtual int16\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_i_a_d_c_aaa1b5bc5315ace3433f35d8ef5873168}{read\+ADCs\+Cyclical}} (uint8\+\_\+t \&adc\+That\+Was\+Read)=0
+\begin{DoxyCompactList}\small\item\em Lees cyclisch waarden uit alle ADC-\/inputs. Dus de eerste call leest uit de ADC-\/input met index 0. De tweede leest uit de volgende, etc. Na lezen uit de ADC-\/input met de hoogste index is de ADC input met index 0 weer aan de beurt. \end{DoxyCompactList}\item 
+\Hypertarget{classhogeschool_1_1_i_a_d_c_aee6f7dea588d41fe53ef41a64ba610ca}\label{classhogeschool_1_1_i_a_d_c_aee6f7dea588d41fe53ef41a64ba610ca} 
+virtual uint8\+\_\+t {\bfseries get\+Nof\+ADCs} ()=0
+\begin{DoxyCompactList}\small\item\em Retourneer het aantal ADC-\/inputs op de chip. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classhogeschool_1_1_i_a_d_c_a34d46ee2221ee2825113e33c5694255a}{end\+Streaming}} ()=0
+\begin{DoxyCompactList}\small\item\em Beeindig de huidige stream door de lopende I2C transactie af te sluiten. De I2C bus is dan weer vrij voor ander gebruik. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstracte interface voor het uitlezen van ADC-\/inputs. 
+
+Abstracte interface voor het uitlezen van differentiele ADC-\/inputs.
+
+\begin{DoxyNote}{Note}
+Een differentiele ADC-\/input bestaat uit een paar van 2 ADC inputs. De eerste tussen pinnen AIN0 en AIN1, de volgende tussen AIN2 en AIN3, etc. De uitgelezen waarde is het verschil tussen de eerste en de tweede input van het paar. Dat verschil kan negatief zijn. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhogeschool_1_1_i_a_d_c_a34d46ee2221ee2825113e33c5694255a}\index{hogeschool::IADC@{hogeschool::IADC}!endStreaming@{endStreaming}}
+\index{endStreaming@{endStreaming}!hogeschool::IADC@{hogeschool::IADC}}
+\doxysubsubsection{\texorpdfstring{endStreaming()}{endStreaming()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_i_a_d_c_a34d46ee2221ee2825113e33c5694255a} 
+virtual void hogeschool\+::\+IADC\+::end\+Streaming (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Beeindig de huidige stream door de lopende I2C transactie af te sluiten. De I2C bus is dan weer vrij voor ander gebruik. 
+
+
+
+Implements \mbox{\hyperlink{classhogeschool_1_1_i_streaming_a47ca8332d6aa0c0256b78cea0f6435be}{hogeschool\+::\+IStreaming}}.
+
+\Hypertarget{classhogeschool_1_1_i_a_d_c_ab2f7cbc39781959797310a714456ffa9}\index{hogeschool::IADC@{hogeschool::IADC}!readADC@{readADC}}
+\index{readADC@{readADC}!hogeschool::IADC@{hogeschool::IADC}}
+\doxysubsubsection{\texorpdfstring{readADC()}{readADC()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_i_a_d_c_ab2f7cbc39781959797310a714456ffa9} 
+virtual uint16\+\_\+t hogeschool\+::\+IADC\+::read\+ADC (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adc\+Index}{, }\item[{bool}]{b\+Streaming}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Lees een waarde uit een specifieke ADC-\/input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dac\+Index} & Index van de ADC-\/input (beginnend bij 0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+16-\/bit waarde die uit de ADC wordt gelezen. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Streaming} & Indien streaming, wordt na het lezen van de value de I2C transactie niet afgesloten, zodat eropvolgende read\+ADC calls maximaal efficient kunnen zijn. Je moet dan wel als je eenmaal klaar bent met de read\+ADC commando\textquotesingle{}s, zelf \doxylink{classhogeschool_1_1_i_a_d_c_a34d46ee2221ee2825113e33c5694255a}{end\+Streaming()} aanroepen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classhogeschool_1_1_i_a_d_c_aaa1b5bc5315ace3433f35d8ef5873168}\index{hogeschool::IADC@{hogeschool::IADC}!readADCsCyclical@{readADCsCyclical}}
+\index{readADCsCyclical@{readADCsCyclical}!hogeschool::IADC@{hogeschool::IADC}}
+\doxysubsubsection{\texorpdfstring{readADCsCyclical()}{readADCsCyclical()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_i_a_d_c_aaa1b5bc5315ace3433f35d8ef5873168} 
+virtual int16\+\_\+t hogeschool\+::\+IADC\+::read\+ADCs\+Cyclical (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{adc\+That\+Was\+Read}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Lees cyclisch waarden uit alle ADC-\/inputs. Dus de eerste call leest uit de ADC-\/input met index 0. De tweede leest uit de volgende, etc. Na lezen uit de ADC-\/input met de hoogste index is de ADC input met index 0 weer aan de beurt. 
+
+\begin{DoxyReturn}{Returns}
+16-\/bit waarde die uit de ADC wordt gelezen. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Dit commando werkt streaming. Roep dus nadat je klaar bent met read\+ADCs\+Cyclical calls de functie \doxylink{classhogeschool_1_1_i_a_d_c_a34d46ee2221ee2825113e33c5694255a}{end\+Streaming()} aan. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_i_a_d_c_8h}{IADC.\+h}}\end{DoxyCompactItemize}

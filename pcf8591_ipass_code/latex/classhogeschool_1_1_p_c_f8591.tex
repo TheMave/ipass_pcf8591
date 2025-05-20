@@ -1,0 +1,100 @@
+\doxysection{hogeschool\+::PCF8591 Class Reference}
+\hypertarget{classhogeschool_1_1_p_c_f8591}{}\label{classhogeschool_1_1_p_c_f8591}\index{hogeschool::PCF8591@{hogeschool::PCF8591}}
+
+
+Driver die de functionaliteit van de pcf8591 chip ontsluit.  
+
+
+
+
+{\ttfamily \#include $<$pcf8591.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{Ain\+To\+Channel\+Mapping}} \+: uint8\+\_\+t \{ {\bfseries AIN\+\_\+\+N\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+N} = 0b00\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}4
+, {\bfseries AIN0\+\_\+1\+\_\+2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+2} = 0b01\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}4
+, {\bfseries AIN0\+\_\+1\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+\+\_\+\+AIN2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+2} = 0b10\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}4
+, {\bfseries AIN1\+\_\+\+MINUS\+\_\+\+AIN0\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+\+\_\+\+AIN2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+1} = 0b11\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}4
+ \}
+\begin{DoxyCompactList}\small\item\em enum voor AIN to channel mapping keuze \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a6c5ee7ccdeb1464041e71e269ac34140}{PCF8591}} (uint8\+\_\+t bits\+A2\+A1\+A0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a0ad173039614668ae807363810c88cf8}{set\+Ain\+To\+Channel\+Mapping}} (\mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{Ain\+To\+Channel\+Mapping}} mapping)
+\begin{DoxyCompactList}\small\item\em AIN pin naar channel mapping. \end{DoxyCompactList}\item 
+\Hypertarget{classhogeschool_1_1_p_c_f8591_a9aca71ac41ad6dc962a39537893197e7}\label{classhogeschool_1_1_p_c_f8591_a9aca71ac41ad6dc962a39537893197e7} 
+uint8\+\_\+t {\bfseries read\+Channel} (uint8\+\_\+t channel, bool b\+Streaming=false)
+\item 
+\Hypertarget{classhogeschool_1_1_p_c_f8591_afaa040ac95a80718806d5cf84cd2791d}\label{classhogeschool_1_1_p_c_f8591_afaa040ac95a80718806d5cf84cd2791d} 
+uint8\+\_\+t {\bfseries read\+Cyclical} (uint8\+\_\+t \&channel\+That\+Was\+Read)
+\item 
+\Hypertarget{classhogeschool_1_1_p_c_f8591_af58ad6df4031201e76f98b208da3b35d}\label{classhogeschool_1_1_p_c_f8591_af58ad6df4031201e76f98b208da3b35d} 
+void {\bfseries write\+DAC} (uint8\+\_\+t value, bool b\+Streaming=false)
+\item 
+\Hypertarget{classhogeschool_1_1_p_c_f8591_a3033053f5eedfa654e63768b301c1b33}\label{classhogeschool_1_1_p_c_f8591_a3033053f5eedfa654e63768b301c1b33} 
+void {\bfseries disable\+Analog\+Output} ()
+\item 
+\Hypertarget{classhogeschool_1_1_p_c_f8591_ae8047d0380ed1720272822a4d4d30bfa}\label{classhogeschool_1_1_p_c_f8591_ae8047d0380ed1720272822a4d4d30bfa} 
+void {\bfseries end\+Streaming} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Driver die de functionaliteit van de pcf8591 chip ontsluit. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}\index{hogeschool::PCF8591@{hogeschool::PCF8591}!AinToChannelMapping@{AinToChannelMapping}}
+\index{AinToChannelMapping@{AinToChannelMapping}!hogeschool::PCF8591@{hogeschool::PCF8591}}
+\doxysubsubsection{\texorpdfstring{AinToChannelMapping}{AinToChannelMapping}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0} 
+enum \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{hogeschool\+::\+PCF8591\+::\+Ain\+To\+Channel\+Mapping}} \+: uint8\+\_\+t}
+
+
+
+enum voor AIN to channel mapping keuze 
+
+AIN\+\_\+\+N\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+N -\/\texorpdfstring{$>$}{>} Elke Analoge input wordt 1 op 1 gemapt naar één kanaal. AIN0\+\_\+1\+\_\+2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+2 -\/\texorpdfstring{$>$}{>} De mate waarin AIN0, AIN1 en AIN2 groter zijn dan AIN3 wordt gemapt naar kanaal 0, 1 en 2. AIN0\+\_\+1\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+\+\_\+\+AIN2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+2 -\/\texorpdfstring{$>$}{>} Analoge inputs 0 en 1 worden 1 op 1 gemapt naar kanaal 0 en 1. AIN1\+\_\+\+MINUS\+\_\+\+AIN0\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+\+\_\+\+AIN2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+1 -\/\texorpdfstring{$>$}{>} Het verschil tussen AIN0 en AIN1 en het verschil tussen AIN2 en AIN3 wordt gemapt naar kanaal 0 en 1 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classhogeschool_1_1_p_c_f8591_a6c5ee7ccdeb1464041e71e269ac34140}\index{hogeschool::PCF8591@{hogeschool::PCF8591}!PCF8591@{PCF8591}}
+\index{PCF8591@{PCF8591}!hogeschool::PCF8591@{hogeschool::PCF8591}}
+\doxysubsubsection{\texorpdfstring{PCF8591()}{PCF8591()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_p_c_f8591_a6c5ee7ccdeb1464041e71e269ac34140} 
+hogeschool\+::\+PCF8591\+::\+PCF8591 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{bits\+A2\+A1\+A0}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bits\+A2\+A1\+A0} & De pinnen A2, A1 en A0 van de chip kunnen gebruikt worden om een uniek I2C adres in te stellen.\\
+\hline
+\end{DoxyParams}
+Als bijvoorbeeld A2 en A1 zijn verbonden met supply en A0 met ground, dient bits\+A2\+A1\+A0=0xb110 worden meegegeven. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhogeschool_1_1_p_c_f8591_a0ad173039614668ae807363810c88cf8}\index{hogeschool::PCF8591@{hogeschool::PCF8591}!setAinToChannelMapping@{setAinToChannelMapping}}
+\index{setAinToChannelMapping@{setAinToChannelMapping}!hogeschool::PCF8591@{hogeschool::PCF8591}}
+\doxysubsubsection{\texorpdfstring{setAinToChannelMapping()}{setAinToChannelMapping()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_p_c_f8591_a0ad173039614668ae807363810c88cf8} 
+void hogeschool\+::\+PCF8591\+::set\+Ain\+To\+Channel\+Mapping (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{Ain\+To\+Channel\+Mapping}}}]{mapping}{}\end{DoxyParamCaption})}
+
+
+
+AIN pin naar channel mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxylink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{Ain\+To\+Channel\+Mapping}} & Via deze parameter kan de mapping worden gespecificeerd. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libs/pcf8591/src/\mbox{\hyperlink{pcf8591_8h}{pcf8591.\+h}}\item 
+libs/pcf8591/src/pcf8591.\+cpp\end{DoxyCompactItemize}

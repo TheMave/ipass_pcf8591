@@ -1,0 +1,30 @@
+\doxysection{DACs\+Tester.\+h}
+\hypertarget{_d_a_cs_tester_8h_source}{}\label{_d_a_cs_tester_8h_source}\index{libs/genericConverters/src/testHelpers/DACsTester.h@{libs/genericConverters/src/testHelpers/DACsTester.h}}
+\mbox{\hyperlink{_d_a_cs_tester_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Arduino.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_d_a_c_8h}{IDAC.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacehogeschool}{hogeschool}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhogeschool_1_1_d_a_cs_tester_addebb96c2fc399fbb64e3711b616d0ee}{DACsTester}}}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhogeschool_1_1_i_d_a_c}{IDAC}}\&\ \_dacChip;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ uint8\_t\ \_nofDacs;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ uint16\_t\ \_sampleFreqKhz;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ testGestreamedZendenNaarDAC();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhogeschool_1_1_d_a_cs_tester_addebb96c2fc399fbb64e3711b616d0ee}{DACsTester}}(\mbox{\hyperlink{classhogeschool_1_1_i_d_a_c}{IDAC}}\&\ dacChip,\ uint8\_t\ nofDacs,\ uint16\_t\ sampleFreqKhz);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhogeschool_1_1_d_a_cs_tester_a482a68979706b34a325421fcbd456154}{setup}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhogeschool_1_1_d_a_cs_tester_a4a40ea8a3e4a2ddea54cadc7420a2c34}{loop}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \};}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}

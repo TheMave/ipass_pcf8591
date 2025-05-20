@@ -389,6 +389,7 @@ dacChip.writeDAC(/*dacIndex*/ 0, adcValue, /*bStreaming*/ false);
 Mogelijke verbeteringen van de library (welke het wel weer complexer en iets trager maken..):
 
 - **Ook de Wire en SoftWire libs** van arduino **wrappen**, zodat:
+  
   - Je library werkt **met elk van beide**, zonder daar code voor te hoeven aanpassen.
   - Je **foutmeldingen** kunt inbouwen als er een nieuwe I2C transactie gestart wordt terwijl er nog eentje open staat (doordat vergeten is endStream() aan te roepen). 
 
