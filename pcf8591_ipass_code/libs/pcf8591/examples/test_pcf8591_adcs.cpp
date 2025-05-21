@@ -119,11 +119,15 @@ void testGestreamedLezenVanADCs()
   }
 }
 
-void test_AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2()
+// signedChannels is een bitmasker dat aangeeft welke channels een diff resultaat leveren
+// en dus potentieel negatief. 
+// signedChannels = 0b101 betekent dus: channel 0 en channel 2 retourneren 2's complement (signed) integers.
+void test_mapping(hs::PCF8591::AinToChannelMapping testMapping, const char* strMapping, int nofChannels, uint8_t signedChannels)
 {
   Serial.println();
   Serial.println("****************************************************");
-  Serial.println("Test: lezen met AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2");
+  Serial.print("Test: lezen met ");
+  Serial.println(strMapping);
   Serial.println("****************************************************");
 
   while(true)  
@@ -144,19 +148,28 @@ void test_AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2()
       Serial.println(value);
     }
 
-    pcf8591.setAinToChannelMapping(hs::PCF8591::AinToChannelMapping::AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2);
+    pcf8591.setAinToChannelMapping(testMapping);
     
-    Serial.println("Dit worden dan de kanalen met mapping:");
-    for (int i = 0; i < (maxNofChannels-1); i++) 
+    Serial.print("Dit worden dan de kanalen met mapping ");
+    Serial.println(strMapping);
+    for (int i = 0; i < nofChannels; i++) 
     {
       // nb kanaal is nu diff ingesteld. kan dus negatief worden.
-      int8_t value = pcf8591.readChannel(i);
-            
+      uint8_t value = pcf8591.readChannel(i);
+
       // Print de waarde naar de serial monitor
       Serial.print("Kanaal");
       Serial.print(i);
       Serial.print(": ");
-      Serial.println(value);
+
+      if((1<<i) & signedChannels)
+      {
+        Serial.println(int8_t(value));
+      }
+      else
+      {
+        Serial.println(value);
+      }
     }
     
     Serial.println("--------");
@@ -189,5 +202,7 @@ void loop()
   testApartLezenVanADCs();
   testGestreamedLezenVanADCs();
   testCyclischLezenVanADCs();
-  test_AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2();
+  test_mapping(hs::PCF8591::AinToChannelMapping::AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2,"AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2",/*nofChannels*/3,/*signedChannels*/0b111);
+  test_mapping(hs::PCF8591::AinToChannelMapping::AIN1_MINUS_AIN0_TO_CHANNEL_0__AIN2_MINUS_AIN3__TO_CHANNEL_1,"AIN1_MINUS_AIN0_TO_CHANNEL_0__AIN2_MINUS_AIN3__TO_CHANNEL_1",/*nofChannels*/2,/*signedChannels*/0b11);
+  test_mapping(hs::PCF8591::AinToChannelMapping::AIN0_1_TO_CHANNEL_0_1__AIN2_MINUS_AIN3_TO_CHANNEL_2,"AIN0_1_TO_CHANNEL_0_1__AIN2_MINUS_AIN3_TO_CHANNEL_2",/*nofChannels*/3,/*signedChannels*/0b100);
 }

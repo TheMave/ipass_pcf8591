@@ -9,6 +9,4 @@ Belangrijkste openstaande TODOs:
 
 - Mezelf nog eens reviewen en refactoren.
 
-- Doxygen documentatie afmaken.
-
 - ADCdiff testen toevoegen.

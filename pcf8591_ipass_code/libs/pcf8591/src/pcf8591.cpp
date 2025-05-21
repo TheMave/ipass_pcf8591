@@ -119,7 +119,7 @@ uint8_t PCF8591::readCyclical(uint8_t& channelThatWasRead)
         _bStreaming = true; // zet de streaming flag weer correct.
 
         returnValue = readSecondByte(/*bStopBit=*/false);
-        _cyclicalChannel = 0; // De eerste na de vorig is altijd channel 0 (zie datasheet pg..)
+        _cyclicalChannel = 1; // .. blijkt nodig om het te laten kloppen ? Zou eigenlijk 0 verwachten..
     }
     else
     {
