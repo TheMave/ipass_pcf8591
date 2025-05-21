@@ -120,71 +120,70 @@ $(function(){initNavTree('pcf8591_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">// Bits 4 en 5 van het control byte bepalen de mapping van de analoge inputs</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="comment">// naar de kanalen.</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
-<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classhogeschool_1_1_p_c_f8591.html#a62d8c184d49da50f0f2aefd71e1aa7a0">   43</a></span>        <span class="keyword">enum</span> <a class="code hl_enumeration" href="classhogeschool_1_1_p_c_f8591.html#a62d8c184d49da50f0f2aefd71e1aa7a0">AinToChannelMapping</a>  : uint8_t</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="comment">// Elke Analoge input wordt 1 op 1 gemapt naar een kanaal:</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            AIN_N_TO_CHANNEL_N = 0b00&lt;&lt;4,</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="comment">// De mate waarin AIN0, AIN1 en AIN2 groter zijn dan AIN3 </span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="comment">// wordt gemapt naar kanaal 0, 1 en 2:</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2 = 0b01&lt;&lt;4,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="comment">// Analoge inputs 0 en 1 worden 1 op 1 gemapt naar kanaal 0 en 1:</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            AIN0_1_TO_CHANNEL_0_1__AIN2_MINUS_AIN3_TO_CHANNEL_2 = 0b10&lt;&lt;4,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="comment">// Het verschil tussen AIN0 en AIN1 en het verschil tussen AIN2 en AIN3</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="comment">// wordt gemapt naar kanaal 0 en 1:</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            AIN1_MINUS_AIN0_TO_CHANNEL_0__AIN2_MINUS_AIN3__TO_CHANNEL_1 = 0b11&lt;&lt;4</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        };</div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classhogeschool_1_1_p_c_f8591.html#a62d8c184d49da50f0f2aefd71e1aa7a0">   58</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="classhogeschool_1_1_p_c_f8591.html#a62d8c184d49da50f0f2aefd71e1aa7a0">AinToChannelMapping</a> : uint8_t</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        AIN_N_TO_CHANNEL_N                             = 0b00 &lt;&lt; 4,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2           = 0b01 &lt;&lt; 4,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        AIN0_1_TO_CHANNEL_0_1__AIN2_MINUS_AIN3_TO_CHANNEL_2 = 0b10 &lt;&lt; 4,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        AIN1_MINUS_AIN0_TO_CHANNEL_0__AIN2_MINUS_AIN3__TO_CHANNEL_1 = 0b11 &lt;&lt; 4</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    };</div>
 </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="comment">// Definieer maskers voor de verschillende bits in het control byte,</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="comment">// zodat die makkelijk gemanipuleerd kunnen worden.</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">const</span> uint8_t channelSelectionMask      = 0b11;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">const</span> uint8_t autoincrementMask         = 0b01&lt;&lt;2;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">const</span> uint8_t ainToChannelMappingMask   = 0b11&lt;&lt;4;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keyword">const</span> uint8_t analogOutputEnableMask    = 0b01&lt;&lt;6;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keyword">const</span> uint8_t base_address = 0x48; <span class="comment">// Het adres als A0, A1 en A2 met ground verbonden zijn.</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        uint8_t _address;               <span class="comment">// Het huidige I2C adres van de PCF8591 (inclusief A0, A1, A2)</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        uint8_t _channel;               <span class="comment">// Het huidige kanaal dat we willen lezen.</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        uint8_t _controlByte;           <span class="comment">// De huidige control byte van de PCF8591</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        uint8_t _ainToChannelMapping;   <span class="comment">// De huidige mapping van de analoge inputs naar de kanalen</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordtype">bool</span> _bAutoIncrementFlag;       <span class="comment">// De huidige status van de autoincrement flag</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="comment">// Definieer maskers voor de verschillende bits in het control byte,</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="comment">// zodat die makkelijk gemanipuleerd kunnen worden.</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">const</span> uint8_t channelSelectionMask      = 0b11;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">const</span> uint8_t autoincrementMask         = 0b01&lt;&lt;2;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keyword">const</span> uint8_t ainToChannelMappingMask   = 0b11&lt;&lt;4;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keyword">const</span> uint8_t analogOutputEnableMask    = 0b01&lt;&lt;6;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keyword">const</span> uint8_t base_address = 0x48; <span class="comment">// Het adres als A0, A1 en A2 met ground verbonden zijn.</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        uint8_t _lastWrittenControlByte; <span class="comment">// De laatst geschreven control byte</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        uint8_t _cyclicalChannel;        <span class="comment">// Het laatst gelezen cyclische channel</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordtype">bool</span> _bStreaming;                <span class="comment">// In streaming mode wordt de I2C bus niet vrijgegeven</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                                        <span class="comment">// voor andere I2C devices middels een Stop Bit.</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                                        <span class="comment">// Dat kan dan expliciet gedaan worden met endStream().</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                                        <span class="comment">// Utility functie om bits in een byte te vervangen.</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        uint8_t replaceBits(uint8_t <span class="keywordtype">byte</span>, uint8_t mask, uint8_t value);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordtype">void</span> writeControlByte(<span class="keywordtype">bool</span> bStreaming);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        uint8_t readByte(<span class="keywordtype">bool</span> bStreaming);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        uint8_t readSecondByte(<span class="keywordtype">bool</span> bStreaming);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordtype">void</span> enableAnalogOutput();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <a class="code hl_function" href="classhogeschool_1_1_p_c_f8591.html#a6c5ee7ccdeb1464041e71e269ac34140">PCF8591</a>(uint8_t bitsA2A1A0);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordtype">void</span>    <a class="code hl_function" href="classhogeschool_1_1_p_c_f8591.html#a0ad173039614668ae807363810c88cf8">setAinToChannelMapping</a>(<a class="code hl_enumeration" href="classhogeschool_1_1_p_c_f8591.html#a62d8c184d49da50f0f2aefd71e1aa7a0">AinToChannelMapping</a> mapping);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        uint8_t readChannel(uint8_t channel, <span class="keywordtype">bool</span> bStreaming = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        uint8_t readCyclical(uint8_t&amp; channelThatWasRead);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordtype">void</span>    writeDAC(uint8_t value, <span class="keywordtype">bool</span> bStreaming = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordtype">void</span>    disableAnalogOutput();</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordtype">void</span>    endStreaming();</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }; <span class="comment">// end class PCF8591</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        uint8_t _address;               <span class="comment">// Het huidige I2C adres van de PCF8591 (inclusief A0, A1, A2)</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        uint8_t _channel;               <span class="comment">// Het huidige kanaal dat we willen lezen.</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        uint8_t _controlByte;           <span class="comment">// De huidige control byte van de PCF8591</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        uint8_t _ainToChannelMapping;   <span class="comment">// De huidige mapping van de analoge inputs naar de kanalen</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordtype">bool</span> _bAutoIncrementFlag;       <span class="comment">// De huidige status van de autoincrement flag</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        uint8_t _lastWrittenControlByte; <span class="comment">// De laatst geschreven control byte</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        uint8_t _cyclicalChannel;        <span class="comment">// Het laatst gelezen cyclische channel</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordtype">bool</span> _bStreaming;                <span class="comment">// In streaming mode wordt de I2C bus niet vrijgegeven</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                                        <span class="comment">// voor andere I2C devices middels een Stop Bit.</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                                        <span class="comment">// Dat kan dan expliciet gedaan worden met endStream().</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                                        <span class="comment">// Utility functie om bits in een byte te vervangen.</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        uint8_t replaceBits(uint8_t <span class="keywordtype">byte</span>, uint8_t mask, uint8_t value);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordtype">void</span> writeControlByte(<span class="keywordtype">bool</span> bStreaming);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        uint8_t readByte(<span class="keywordtype">bool</span> bStreaming);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        uint8_t readSecondByte(<span class="keywordtype">bool</span> bStreaming);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordtype">void</span> enableAnalogOutput();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <a class="code hl_function" href="classhogeschool_1_1_p_c_f8591.html#a6c5ee7ccdeb1464041e71e269ac34140">PCF8591</a>(uint8_t bitsA2A1A0);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordtype">void</span>    <a class="code hl_function" href="classhogeschool_1_1_p_c_f8591.html#a0ad173039614668ae807363810c88cf8">setAinToChannelMapping</a>(<a class="code hl_enumeration" href="classhogeschool_1_1_p_c_f8591.html#a62d8c184d49da50f0f2aefd71e1aa7a0">AinToChannelMapping</a> mapping);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        uint8_t <a class="code hl_function" href="classhogeschool_1_1_p_c_f8591.html#a9aca71ac41ad6dc962a39537893197e7">readChannel</a>(uint8_t channel, <span class="keywordtype">bool</span> bStreaming = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        uint8_t <a class="code hl_function" href="classhogeschool_1_1_p_c_f8591.html#afaa040ac95a80718806d5cf84cd2791d">readCyclical</a>(uint8_t&amp; channelThatWasRead);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordtype">void</span>    <a class="code hl_function" href="classhogeschool_1_1_p_c_f8591.html#af58ad6df4031201e76f98b208da3b35d">writeDAC</a>(uint8_t value, <span class="keywordtype">bool</span> bStreaming = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordtype">void</span>    <a class="code hl_function" href="classhogeschool_1_1_p_c_f8591.html#a3033053f5eedfa654e63768b301c1b33">disableAnalogOutput</a>();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="keywordtype">void</span>    <a class="code hl_function" href="classhogeschool_1_1_p_c_f8591.html#ae8047d0380ed1720272822a4d4d30bfa">endStreaming</a>();</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    }; <span class="comment">// end class PCF8591</span></div>
 </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>} <span class="comment">// end namespace hogeschool</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>} <span class="comment">// end namespace hogeschool</span></div>
 <div class="ttc" id="aclasshogeschool_1_1_p_c_f8591_html_a0ad173039614668ae807363810c88cf8"><div class="ttname"><a href="classhogeschool_1_1_p_c_f8591.html#a0ad173039614668ae807363810c88cf8">hogeschool::PCF8591::setAinToChannelMapping</a></div><div class="ttdeci">void setAinToChannelMapping(AinToChannelMapping mapping)</div><div class="ttdoc">AIN pin naar channel mapping.</div><div class="ttdef"><b>Definition</b> pcf8591.cpp:61</div></div>
-<div class="ttc" id="aclasshogeschool_1_1_p_c_f8591_html_a62d8c184d49da50f0f2aefd71e1aa7a0"><div class="ttname"><a href="classhogeschool_1_1_p_c_f8591.html#a62d8c184d49da50f0f2aefd71e1aa7a0">hogeschool::PCF8591::AinToChannelMapping</a></div><div class="ttdeci">AinToChannelMapping</div><div class="ttdoc">enum voor AIN to channel mapping keuze</div><div class="ttdef"><b>Definition</b> pcf8591.h:44</div></div>
+<div class="ttc" id="aclasshogeschool_1_1_p_c_f8591_html_a3033053f5eedfa654e63768b301c1b33"><div class="ttname"><a href="classhogeschool_1_1_p_c_f8591.html#a3033053f5eedfa654e63768b301c1b33">hogeschool::PCF8591::disableAnalogOutput</a></div><div class="ttdeci">void disableAnalogOutput()</div><div class="ttdoc">Zet de analoge output van de DAC in tri-state mode, bijvoorbeeld om stroom te besparen.</div><div class="ttdef"><b>Definition</b> pcf8591.cpp:179</div></div>
+<div class="ttc" id="aclasshogeschool_1_1_p_c_f8591_html_a62d8c184d49da50f0f2aefd71e1aa7a0"><div class="ttname"><a href="classhogeschool_1_1_p_c_f8591.html#a62d8c184d49da50f0f2aefd71e1aa7a0">hogeschool::PCF8591::AinToChannelMapping</a></div><div class="ttdeci">AinToChannelMapping</div><div class="ttdoc">Keuze voor het mappen van AIN-signalen naar outputkanalen.</div><div class="ttdef"><b>Definition</b> pcf8591.h:59</div></div>
 <div class="ttc" id="aclasshogeschool_1_1_p_c_f8591_html_a6c5ee7ccdeb1464041e71e269ac34140"><div class="ttname"><a href="classhogeschool_1_1_p_c_f8591.html#a6c5ee7ccdeb1464041e71e269ac34140">hogeschool::PCF8591::PCF8591</a></div><div class="ttdeci">PCF8591(uint8_t bitsA2A1A0)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> pcf8591.cpp:49</div></div>
+<div class="ttc" id="aclasshogeschool_1_1_p_c_f8591_html_a9aca71ac41ad6dc962a39537893197e7"><div class="ttname"><a href="classhogeschool_1_1_p_c_f8591.html#a9aca71ac41ad6dc962a39537893197e7">hogeschool::PCF8591::readChannel</a></div><div class="ttdeci">uint8_t readChannel(uint8_t channel, bool bStreaming=false)</div><div class="ttdoc">Lees een waarde uit een kanaal.</div><div class="ttdef"><b>Definition</b> pcf8591.cpp:67</div></div>
+<div class="ttc" id="aclasshogeschool_1_1_p_c_f8591_html_ae8047d0380ed1720272822a4d4d30bfa"><div class="ttname"><a href="classhogeschool_1_1_p_c_f8591.html#ae8047d0380ed1720272822a4d4d30bfa">hogeschool::PCF8591::endStreaming</a></div><div class="ttdeci">void endStreaming()</div><div class="ttdoc">endStreaming beeindigt de lopende transactie op de communicatiebus (bijvoorbeeld I2C),...</div><div class="ttdef"><b>Definition</b> pcf8591.cpp:170</div></div>
+<div class="ttc" id="aclasshogeschool_1_1_p_c_f8591_html_af58ad6df4031201e76f98b208da3b35d"><div class="ttname"><a href="classhogeschool_1_1_p_c_f8591.html#af58ad6df4031201e76f98b208da3b35d">hogeschool::PCF8591::writeDAC</a></div><div class="ttdeci">void writeDAC(uint8_t value, bool bStreaming=false)</div><div class="ttdoc">Schrijf een waarde naar de DAC.</div><div class="ttdef"><b>Definition</b> pcf8591.cpp:185</div></div>
+<div class="ttc" id="aclasshogeschool_1_1_p_c_f8591_html_afaa040ac95a80718806d5cf84cd2791d"><div class="ttname"><a href="classhogeschool_1_1_p_c_f8591.html#afaa040ac95a80718806d5cf84cd2791d">hogeschool::PCF8591::readCyclical</a></div><div class="ttdeci">uint8_t readCyclical(uint8_t &amp;channelThatWasRead)</div><div class="ttdoc">Lees cyclisch waarden uit alle kanalen. Dus de eerste call leest uit het kanaal met index 0....</div><div class="ttdef"><b>Definition</b> pcf8591.cpp:111</div></div>
 <div class="ttc" id="anamespacehogeschool_html"><div class="ttname"><a href="namespacehogeschool.html">hogeschool</a></div><div class="ttdoc">Een &quot;unieke&quot; namespace voor je codebase voorkomt eventuele name-clashes met third party code.</div><div class="ttdef"><b>Definition</b> IADC.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -12,12 +12,12 @@ Driver die de functionaliteit van de pcf8591 chip ontsluit.
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{Ain\+To\+Channel\+Mapping}} \+: uint8\+\_\+t \{ {\bfseries AIN\+\_\+\+N\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+N} = 0b00\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}4
-, {\bfseries AIN0\+\_\+1\+\_\+2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+2} = 0b01\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}4
-, {\bfseries AIN0\+\_\+1\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+\+\_\+\+AIN2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+2} = 0b10\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}4
-, {\bfseries AIN1\+\_\+\+MINUS\+\_\+\+AIN0\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+\+\_\+\+AIN2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+1} = 0b11\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}4
+enum \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{Ain\+To\+Channel\+Mapping}} \+: uint8\+\_\+t \{ {\bfseries AIN\+\_\+\+N\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+N} = 0b00 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, {\bfseries AIN0\+\_\+1\+\_\+2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+2} = 0b01 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, {\bfseries AIN0\+\_\+1\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+\+\_\+\+AIN2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+2} = 0b10 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, {\bfseries AIN1\+\_\+\+MINUS\+\_\+\+AIN0\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+\+\_\+\+AIN2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+1} = 0b11 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
  \}
-\begin{DoxyCompactList}\small\item\em enum voor AIN to channel mapping keuze \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Keuze voor het mappen van AIN-\/signalen naar outputkanalen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,21 +25,18 @@ enum \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a0ad173039614668ae807363810c88cf8}{set\+Ain\+To\+Channel\+Mapping}} (\mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{Ain\+To\+Channel\+Mapping}} mapping)
 \begin{DoxyCompactList}\small\item\em AIN pin naar channel mapping. \end{DoxyCompactList}\item 
-\Hypertarget{classhogeschool_1_1_p_c_f8591_a9aca71ac41ad6dc962a39537893197e7}\label{classhogeschool_1_1_p_c_f8591_a9aca71ac41ad6dc962a39537893197e7} 
-uint8\+\_\+t {\bfseries read\+Channel} (uint8\+\_\+t channel, bool b\+Streaming=false)
-\item 
-\Hypertarget{classhogeschool_1_1_p_c_f8591_afaa040ac95a80718806d5cf84cd2791d}\label{classhogeschool_1_1_p_c_f8591_afaa040ac95a80718806d5cf84cd2791d} 
-uint8\+\_\+t {\bfseries read\+Cyclical} (uint8\+\_\+t \&channel\+That\+Was\+Read)
-\item 
-\Hypertarget{classhogeschool_1_1_p_c_f8591_af58ad6df4031201e76f98b208da3b35d}\label{classhogeschool_1_1_p_c_f8591_af58ad6df4031201e76f98b208da3b35d} 
-void {\bfseries write\+DAC} (uint8\+\_\+t value, bool b\+Streaming=false)
-\item 
+uint8\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a9aca71ac41ad6dc962a39537893197e7}{read\+Channel}} (uint8\+\_\+t channel, bool b\+Streaming=false)
+\begin{DoxyCompactList}\small\item\em Lees een waarde uit een kanaal. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_afaa040ac95a80718806d5cf84cd2791d}{read\+Cyclical}} (uint8\+\_\+t \&channel\+That\+Was\+Read)
+\begin{DoxyCompactList}\small\item\em Lees cyclisch waarden uit alle kanalen. Dus de eerste call leest uit het kanaal met index 0. De tweede leest uit de volgende, etc. Na lezen uit het kanaal met de hoogste index is de het kanaal met index 0 weer aan de beurt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_af58ad6df4031201e76f98b208da3b35d}{write\+DAC}} (uint8\+\_\+t value, bool b\+Streaming=false)
+\begin{DoxyCompactList}\small\item\em Schrijf een waarde naar de DAC. \end{DoxyCompactList}\item 
 \Hypertarget{classhogeschool_1_1_p_c_f8591_a3033053f5eedfa654e63768b301c1b33}\label{classhogeschool_1_1_p_c_f8591_a3033053f5eedfa654e63768b301c1b33} 
 void {\bfseries disable\+Analog\+Output} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Zet de analoge output van de DAC in tri-\/state mode, bijvoorbeeld om stroom te besparen. \end{DoxyCompactList}\item 
 \Hypertarget{classhogeschool_1_1_p_c_f8591_ae8047d0380ed1720272822a4d4d30bfa}\label{classhogeschool_1_1_p_c_f8591_ae8047d0380ed1720272822a4d4d30bfa} 
 void {\bfseries end\+Streaming} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em end\+Streaming beeindigt de lopende transactie op de communicatiebus (bijvoorbeeld I2C), zodat de communicatiebus weer wordt vrijgegeven voor nieuwe transacties. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -54,9 +51,21 @@ enum \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1
 
 
 
-enum voor AIN to channel mapping keuze 
+Keuze voor het mappen van AIN-\/signalen naar outputkanalen. 
 
-AIN\+\_\+\+N\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+N -\/\texorpdfstring{$>$}{>} Elke Analoge input wordt 1 op 1 gemapt naar één kanaal. AIN0\+\_\+1\+\_\+2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+2 -\/\texorpdfstring{$>$}{>} De mate waarin AIN0, AIN1 en AIN2 groter zijn dan AIN3 wordt gemapt naar kanaal 0, 1 en 2. AIN0\+\_\+1\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+\+\_\+\+AIN2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+2 -\/\texorpdfstring{$>$}{>} Analoge inputs 0 en 1 worden 1 op 1 gemapt naar kanaal 0 en 1. AIN1\+\_\+\+MINUS\+\_\+\+AIN0\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+\+\_\+\+AIN2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+1 -\/\texorpdfstring{$>$}{>} Het verschil tussen AIN0 en AIN1 en het verschil tussen AIN2 en AIN3 wordt gemapt naar kanaal 0 en 1 
+Dit enum definieert verschillende manieren om de vier analoge inputs (AIN0–\+AIN3) om te zetten naar maximaal vier kanalen.
+
+Mogelijke waarden\+:
+\begin{DoxyItemize}
+\item {\bfseries{AIN\+\_\+\+N\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+N}} ~\newline
+ Elke AIN\textsubscript{i} → kanaal {\itshape .}
+\item {\itshape {\bfseries{AIN0\+\_\+1\+\_\+2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+2}} ~\newline
+ (AIN0, AIN1, AIN2) − AIN3 → kanalen 0, 1, 2.}
+\item {\itshape {\bfseries{AIN0\+\_\+1\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+\+\_\+\+AIN2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+2}} ~\newline
+ AIN0 → kanaal 0, AIN1 → kanaal 1, (AIN2 − AIN3) → kanaal 2.}
+\item {\itshape {\bfseries{AIN1\+\_\+\+MINUS\+\_\+\+AIN0\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+\+\_\+\+AIN2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+1}} ~\newline
+ (AIN1 − AIN0) → kanaal 0, (AIN2 − AIN3) → kanaal 1. }
+\end{DoxyItemize}
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classhogeschool_1_1_p_c_f8591_a6c5ee7ccdeb1464041e71e269ac34140}\index{hogeschool::PCF8591@{hogeschool::PCF8591}!PCF8591@{PCF8591}}
@@ -77,6 +86,47 @@ Constructor.
 Als bijvoorbeeld A2 en A1 zijn verbonden met supply en A0 met ground, dient bits\+A2\+A1\+A0=0xb110 worden meegegeven. 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classhogeschool_1_1_p_c_f8591_a9aca71ac41ad6dc962a39537893197e7}\index{hogeschool::PCF8591@{hogeschool::PCF8591}!readChannel@{readChannel}}
+\index{readChannel@{readChannel}!hogeschool::PCF8591@{hogeschool::PCF8591}}
+\doxysubsubsection{\texorpdfstring{readChannel()}{readChannel()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_p_c_f8591_a9aca71ac41ad6dc962a39537893197e7} 
+uint8\+\_\+t hogeschool\+::\+PCF8591\+::read\+Channel (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel}{, }\item[{bool}]{b\+Streaming}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Lees een waarde uit een kanaal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & de index het kanaal (beginnend bij 0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+16-\/bit waarde die uit de ADC wordt gelezen. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Streaming} & Indien streaming, wordt na het lezen van de value de I2C transactie niet afgesloten, zodat eropvolgende read\+Channel calls maximaal efficient kunnen zijn. Je moet dan wel als je eenmaal klaar bent met de read\+Channel commando\textquotesingle{}s, zelf \doxylink{classhogeschool_1_1_p_c_f8591_ae8047d0380ed1720272822a4d4d30bfa}{end\+Streaming()} aanroepen. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classhogeschool_1_1_p_c_f8591_afaa040ac95a80718806d5cf84cd2791d}\index{hogeschool::PCF8591@{hogeschool::PCF8591}!readCyclical@{readCyclical}}
+\index{readCyclical@{readCyclical}!hogeschool::PCF8591@{hogeschool::PCF8591}}
+\doxysubsubsection{\texorpdfstring{readCyclical()}{readCyclical()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_p_c_f8591_afaa040ac95a80718806d5cf84cd2791d} 
+uint8\+\_\+t hogeschool\+::\+PCF8591\+::read\+Cyclical (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{channel\+That\+Was\+Read}{}\end{DoxyParamCaption})}
+
+
+
+Lees cyclisch waarden uit alle kanalen. Dus de eerste call leest uit het kanaal met index 0. De tweede leest uit de volgende, etc. Na lezen uit het kanaal met de hoogste index is de het kanaal met index 0 weer aan de beurt. 
+
+\begin{DoxyReturn}{Returns}
+16-\/bit waarde die uit het kanaal wordt gelezen. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Dit commando werkt streaming. Roep dus nadat je klaar bent met read\+Cyclical calls de functie \doxylink{classhogeschool_1_1_p_c_f8591_ae8047d0380ed1720272822a4d4d30bfa}{end\+Streaming()} aan. 
+
+Als het betreffende kanaal voortkomt uit een differentiele mapping van analoge inputs, zoals AIN0\+\_\+1\+\_\+2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+2, dan moet je de uint\+\_\+8 eerst nog een reinterpret\+\_\+cast geven naar int8\+\_\+t. 
+\end{DoxyNote}
 \Hypertarget{classhogeschool_1_1_p_c_f8591_a0ad173039614668ae807363810c88cf8}\index{hogeschool::PCF8591@{hogeschool::PCF8591}!setAinToChannelMapping@{setAinToChannelMapping}}
 \index{setAinToChannelMapping@{setAinToChannelMapping}!hogeschool::PCF8591@{hogeschool::PCF8591}}
 \doxysubsubsection{\texorpdfstring{setAinToChannelMapping()}{setAinToChannelMapping()}}
@@ -89,9 +139,29 @@ AIN pin naar channel mapping.
 
 
 \begin{DoxyParams}{Parameters}
-{\em \doxylink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{Ain\+To\+Channel\+Mapping}} & Via deze parameter kan de mapping worden gespecificeerd. \\
+{\em \doxylink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{Ain\+To\+Channel\+Mapping}} & Via deze enum parameter kan de mapping van analoge input (pin)s naar kanalen worden gespecificeerd (zie de enum documentatie). \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classhogeschool_1_1_p_c_f8591_af58ad6df4031201e76f98b208da3b35d}\index{hogeschool::PCF8591@{hogeschool::PCF8591}!writeDAC@{writeDAC}}
+\index{writeDAC@{writeDAC}!hogeschool::PCF8591@{hogeschool::PCF8591}}
+\doxysubsubsection{\texorpdfstring{writeDAC()}{writeDAC()}}
+{\footnotesize\ttfamily \label{classhogeschool_1_1_p_c_f8591_af58ad6df4031201e76f98b208da3b35d} 
+void hogeschool\+::\+PCF8591\+::write\+DAC (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value}{, }\item[{bool}]{b\+Streaming}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Schrijf een waarde naar de DAC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & 16-\/bit waarde die naar de DAC wordt gestuurd. \\
+\hline
+{\em b\+Streaming} & Indien streaming, wordt na het schrijven van de value de I2C transactie niet afgesloten, zodat eropvolgende write\+DAC calls maximaal efficient kunnen zijn. Je moet dan wel als je eenmaal klaar bent met de write\+DAC commando\textquotesingle{}s, zelf \doxylink{classhogeschool_1_1_p_c_f8591_ae8047d0380ed1720272822a4d4d30bfa}{end\+Streaming()} aanroepen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Als het betreffende kanaal voortkomt uit een differentiele mapping van analoge inputs, zoals AIN0\+\_\+1\+\_\+2\+\_\+\+MINUS\+\_\+\+AIN3\+\_\+\+TO\+\_\+\+CHANNEL\+\_\+0\+\_\+1\+\_\+2, dan moet je de uint\+\_\+8 eerst nog een reinterpret\+\_\+cast geven naar int8\+\_\+t. 
+\end{DoxyNote}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

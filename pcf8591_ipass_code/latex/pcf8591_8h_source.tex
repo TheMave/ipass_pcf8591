@@ -16,64 +16,58 @@
 \DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Bits\ 4\ en\ 5\ van\ het\ control\ byte\ bepalen\ de\ mapping\ van\ de\ analoge\ inputs}}
 \DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ naar\ de\ kanalen.}}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{AinToChannelMapping}}\ \ :\ uint8\_t}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Elke\ Analoge\ input\ wordt\ 1\ op\ 1\ gemapt\ naar\ een\ kanaal:}}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ AIN\_N\_TO\_CHANNEL\_N\ =\ 0b00<<4,}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ De\ mate\ waarin\ AIN0,\ AIN1\ en\ AIN2\ groter\ zijn\ dan\ AIN3\ }}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ wordt\ gemapt\ naar\ kanaal\ 0,\ 1\ en\ 2:}}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ AIN0\_1\_2\_MINUS\_AIN3\_TO\_CHANNEL\_0\_1\_2\ =\ 0b01<<4,}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Analoge\ inputs\ 0\ en\ 1\ worden\ 1\ op\ 1\ gemapt\ naar\ kanaal\ 0\ en\ 1:}}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ AIN0\_1\_TO\_CHANNEL\_0\_1\_\_AIN2\_MINUS\_AIN3\_TO\_CHANNEL\_2\ =\ 0b10<<4,}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Het\ verschil\ tussen\ AIN0\ en\ AIN1\ en\ het\ verschil\ tussen\ AIN2\ en\ AIN3}}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ wordt\ gemapt\ naar\ kanaal\ 0\ en\ 1:}}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ AIN1\_MINUS\_AIN0\_TO\_CHANNEL\_0\_\_AIN2\_MINUS\_AIN3\_\_TO\_CHANNEL\_1\ =\ 0b11<<4}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Definieer\ maskers\ voor\ de\ verschillende\ bits\ in\ het\ control\ byte,}}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ zodat\ die\ makkelijk\ gemanipuleerd\ kunnen\ worden.}}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ channelSelectionMask\ \ \ \ \ \ =\ 0b11;}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ autoincrementMask\ \ \ \ \ \ \ \ \ =\ 0b01<<2;}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ ainToChannelMappingMask\ \ \ =\ 0b11<<4;}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ analogOutputEnableMask\ \ \ \ =\ 0b01<<6;}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ base\_address\ =\ 0x48;\ \textcolor{comment}{//\ Het\ adres\ als\ A0,\ A1\ en\ A2\ met\ ground\ verbonden\ zijn.}}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ uint8\_t\ \_address;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Het\ huidige\ I2C\ adres\ van\ de\ PCF8591\ (inclusief\ A0,\ A1,\ A2)}}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ uint8\_t\ \_channel;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Het\ huidige\ kanaal\ dat\ we\ willen\ lezen.}}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ uint8\_t\ \_controlByte;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ De\ huidige\ control\ byte\ van\ de\ PCF8591}}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ uint8\_t\ \_ainToChannelMapping;\ \ \ \textcolor{comment}{//\ De\ huidige\ mapping\ van\ de\ analoge\ inputs\ naar\ de\ kanalen}}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_bAutoIncrementFlag;\ \ \ \ \ \ \ \textcolor{comment}{//\ De\ huidige\ status\ van\ de\ autoincrement\ flag}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{AinToChannelMapping}}\ :\ uint8\_t}
+\DoxyCodeLine{00059\ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ AIN\_N\_TO\_CHANNEL\_N\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0b00\ <<\ 4,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ AIN0\_1\_2\_MINUS\_AIN3\_TO\_CHANNEL\_0\_1\_2\ \ \ \ \ \ \ \ \ \ \ =\ 0b01\ <<\ 4,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ AIN0\_1\_TO\_CHANNEL\_0\_1\_\_AIN2\_MINUS\_AIN3\_TO\_CHANNEL\_2\ =\ 0b10\ <<\ 4,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ AIN1\_MINUS\_AIN0\_TO\_CHANNEL\_0\_\_AIN2\_MINUS\_AIN3\_\_TO\_CHANNEL\_1\ =\ 0b11\ <<\ 4}
+\DoxyCodeLine{00064\ \ \ \ \ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Definieer\ maskers\ voor\ de\ verschillende\ bits\ in\ het\ control\ byte,}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ zodat\ die\ makkelijk\ gemanipuleerd\ kunnen\ worden.}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ channelSelectionMask\ \ \ \ \ \ =\ 0b11;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ autoincrementMask\ \ \ \ \ \ \ \ \ =\ 0b01<<2;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ ainToChannelMappingMask\ \ \ =\ 0b11<<4;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ analogOutputEnableMask\ \ \ \ =\ 0b01<<6;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ base\_address\ =\ 0x48;\ \textcolor{comment}{//\ Het\ adres\ als\ A0,\ A1\ en\ A2\ met\ ground\ verbonden\ zijn.}}
 \DoxyCodeLine{00074\ }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ uint8\_t\ \_lastWrittenControlByte;\ \textcolor{comment}{//\ De\ laatst\ geschreven\ control\ byte}}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ uint8\_t\ \_cyclicalChannel;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Het\ laatst\ gelezen\ cyclische\ channel}}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_bStreaming;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ In\ streaming\ mode\ wordt\ de\ I2C\ bus\ niet\ vrijgegeven}}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ voor\ andere\ I2C\ devices\ middels\ een\ Stop\ Bit.}}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Dat\ kan\ dan\ expliciet\ gedaan\ worden\ met\ endStream().}}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Utility\ functie\ om\ bits\ in\ een\ byte\ te\ vervangen.}}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ uint8\_t\ replaceBits(uint8\_t\ \textcolor{keywordtype}{byte},\ uint8\_t\ mask,\ uint8\_t\ value);}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writeControlByte(\textcolor{keywordtype}{bool}\ bStreaming);}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ uint8\_t\ readByte(\textcolor{keywordtype}{bool}\ bStreaming);}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ uint8\_t\ readSecondByte(\textcolor{keywordtype}{bool}\ bStreaming);}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ enableAnalogOutput();}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a6c5ee7ccdeb1464041e71e269ac34140}{PCF8591}}(uint8\_t\ bitsA2A1A0);}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a0ad173039614668ae807363810c88cf8}{setAinToChannelMapping}}(\mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{AinToChannelMapping}}\ mapping);}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ uint8\_t\ readChannel(uint8\_t\ channel,\ \textcolor{keywordtype}{bool}\ bStreaming\ =\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ uint8\_t\ readCyclical(uint8\_t\&\ channelThatWasRead);}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ writeDAC(uint8\_t\ value,\ \textcolor{keywordtype}{bool}\ bStreaming\ =\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ disableAnalogOutput();}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ endStreaming();}
-\DoxyCodeLine{00113\ \ \ \ \ \};\ \textcolor{comment}{//\ end\ class\ PCF8591}}
-\DoxyCodeLine{00114\ \}\ \textcolor{comment}{//\ end\ namespace\ hogeschool}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ uint8\_t\ \_address;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Het\ huidige\ I2C\ adres\ van\ de\ PCF8591\ (inclusief\ A0,\ A1,\ A2)}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ uint8\_t\ \_channel;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Het\ huidige\ kanaal\ dat\ we\ willen\ lezen.}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ uint8\_t\ \_controlByte;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ De\ huidige\ control\ byte\ van\ de\ PCF8591}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ uint8\_t\ \_ainToChannelMapping;\ \ \ \textcolor{comment}{//\ De\ huidige\ mapping\ van\ de\ analoge\ inputs\ naar\ de\ kanalen}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_bAutoIncrementFlag;\ \ \ \ \ \ \ \textcolor{comment}{//\ De\ huidige\ status\ van\ de\ autoincrement\ flag}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ uint8\_t\ \_lastWrittenControlByte;\ \textcolor{comment}{//\ De\ laatst\ geschreven\ control\ byte}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ uint8\_t\ \_cyclicalChannel;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Het\ laatst\ gelezen\ cyclische\ channel}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_bStreaming;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ In\ streaming\ mode\ wordt\ de\ I2C\ bus\ niet\ vrijgegeven}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ voor\ andere\ I2C\ devices\ middels\ een\ Stop\ Bit.}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Dat\ kan\ dan\ expliciet\ gedaan\ worden\ met\ endStream().}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Utility\ functie\ om\ bits\ in\ een\ byte\ te\ vervangen.}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ uint8\_t\ replaceBits(uint8\_t\ \textcolor{keywordtype}{byte},\ uint8\_t\ mask,\ uint8\_t\ value);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ writeControlByte(\textcolor{keywordtype}{bool}\ bStreaming);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ uint8\_t\ readByte(\textcolor{keywordtype}{bool}\ bStreaming);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ uint8\_t\ readSecondByte(\textcolor{keywordtype}{bool}\ bStreaming);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ enableAnalogOutput();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a6c5ee7ccdeb1464041e71e269ac34140}{PCF8591}}(uint8\_t\ bitsA2A1A0);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a0ad173039614668ae807363810c88cf8}{setAinToChannelMapping}}(\mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a62d8c184d49da50f0f2aefd71e1aa7a0}{AinToChannelMapping}}\ mapping);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a9aca71ac41ad6dc962a39537893197e7}{readChannel}}(uint8\_t\ channel,\ \textcolor{keywordtype}{bool}\ bStreaming\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_afaa040ac95a80718806d5cf84cd2791d}{readCyclical}}(uint8\_t\&\ channelThatWasRead);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_af58ad6df4031201e76f98b208da3b35d}{writeDAC}}(uint8\_t\ value,\ \textcolor{keywordtype}{bool}\ bStreaming\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_a3033053f5eedfa654e63768b301c1b33}{disableAnalogOutput}}();}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{classhogeschool_1_1_p_c_f8591_ae8047d0380ed1720272822a4d4d30bfa}{endStreaming}}();}
+\DoxyCodeLine{00173\ \ \ \ \ \};\ \textcolor{comment}{//\ end\ class\ PCF8591}}
+\DoxyCodeLine{00174\ \}\ \textcolor{comment}{//\ end\ namespace\ hogeschool}}
 
 \end{DoxyCode}

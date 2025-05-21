@@ -117,12 +117,12 @@ $(function(){initNavTree('classhogeschool_1_1_p_c_f8591.html',''); initResizable
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a62d8c184d49da50f0f2aefd71e1aa7a0" id="r_a62d8c184d49da50f0f2aefd71e1aa7a0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62d8c184d49da50f0f2aefd71e1aa7a0">AinToChannelMapping</a> : uint8_t { <b>AIN_N_TO_CHANNEL_N</b> = 0b00&lt;&lt;4
-, <b>AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2</b> = 0b01&lt;&lt;4
-, <b>AIN0_1_TO_CHANNEL_0_1__AIN2_MINUS_AIN3_TO_CHANNEL_2</b> = 0b10&lt;&lt;4
-, <b>AIN1_MINUS_AIN0_TO_CHANNEL_0__AIN2_MINUS_AIN3__TO_CHANNEL_1</b> = 0b11&lt;&lt;4
+<tr class="memitem:a62d8c184d49da50f0f2aefd71e1aa7a0" id="r_a62d8c184d49da50f0f2aefd71e1aa7a0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62d8c184d49da50f0f2aefd71e1aa7a0">AinToChannelMapping</a> : uint8_t { <b>AIN_N_TO_CHANNEL_N</b> = 0b00 &lt;&lt; 4
+, <b>AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2</b> = 0b01 &lt;&lt; 4
+, <b>AIN0_1_TO_CHANNEL_0_1__AIN2_MINUS_AIN3_TO_CHANNEL_2</b> = 0b10 &lt;&lt; 4
+, <b>AIN1_MINUS_AIN0_TO_CHANNEL_0__AIN2_MINUS_AIN3__TO_CHANNEL_1</b> = 0b11 &lt;&lt; 4
  }</td></tr>
-<tr class="memdesc:a62d8c184d49da50f0f2aefd71e1aa7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">enum voor AIN to channel mapping keuze  <a href="#a62d8c184d49da50f0f2aefd71e1aa7a0">More...</a><br /></td></tr>
+<tr class="memdesc:a62d8c184d49da50f0f2aefd71e1aa7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keuze voor het mappen van AIN-signalen naar outputkanalen.  <a href="#a62d8c184d49da50f0f2aefd71e1aa7a0">More...</a><br /></td></tr>
 <tr class="separator:a62d8c184d49da50f0f2aefd71e1aa7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -133,20 +133,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0ad173039614668ae807363810c88cf8" id="r_a0ad173039614668ae807363810c88cf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ad173039614668ae807363810c88cf8">setAinToChannelMapping</a> (<a class="el" href="#a62d8c184d49da50f0f2aefd71e1aa7a0">AinToChannelMapping</a> mapping)</td></tr>
 <tr class="memdesc:a0ad173039614668ae807363810c88cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">AIN pin naar channel mapping.  <br /></td></tr>
 <tr class="separator:a0ad173039614668ae807363810c88cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9aca71ac41ad6dc962a39537893197e7" id="r_a9aca71ac41ad6dc962a39537893197e7"><td class="memItemLeft" align="right" valign="top"><a id="a9aca71ac41ad6dc962a39537893197e7" name="a9aca71ac41ad6dc962a39537893197e7"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>readChannel</b> (uint8_t channel, bool bStreaming=false)</td></tr>
+<tr class="memitem:a9aca71ac41ad6dc962a39537893197e7" id="r_a9aca71ac41ad6dc962a39537893197e7"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9aca71ac41ad6dc962a39537893197e7">readChannel</a> (uint8_t channel, bool bStreaming=false)</td></tr>
+<tr class="memdesc:a9aca71ac41ad6dc962a39537893197e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lees een waarde uit een kanaal.  <br /></td></tr>
 <tr class="separator:a9aca71ac41ad6dc962a39537893197e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaa040ac95a80718806d5cf84cd2791d" id="r_afaa040ac95a80718806d5cf84cd2791d"><td class="memItemLeft" align="right" valign="top"><a id="afaa040ac95a80718806d5cf84cd2791d" name="afaa040ac95a80718806d5cf84cd2791d"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>readCyclical</b> (uint8_t &amp;channelThatWasRead)</td></tr>
+<tr class="memitem:afaa040ac95a80718806d5cf84cd2791d" id="r_afaa040ac95a80718806d5cf84cd2791d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afaa040ac95a80718806d5cf84cd2791d">readCyclical</a> (uint8_t &amp;channelThatWasRead)</td></tr>
+<tr class="memdesc:afaa040ac95a80718806d5cf84cd2791d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lees cyclisch waarden uit alle kanalen. Dus de eerste call leest uit het kanaal met index 0. De tweede leest uit de volgende, etc. Na lezen uit het kanaal met de hoogste index is de het kanaal met index 0 weer aan de beurt.  <br /></td></tr>
 <tr class="separator:afaa040ac95a80718806d5cf84cd2791d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af58ad6df4031201e76f98b208da3b35d" id="r_af58ad6df4031201e76f98b208da3b35d"><td class="memItemLeft" align="right" valign="top"><a id="af58ad6df4031201e76f98b208da3b35d" name="af58ad6df4031201e76f98b208da3b35d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>writeDAC</b> (uint8_t value, bool bStreaming=false)</td></tr>
+<tr class="memitem:af58ad6df4031201e76f98b208da3b35d" id="r_af58ad6df4031201e76f98b208da3b35d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af58ad6df4031201e76f98b208da3b35d">writeDAC</a> (uint8_t value, bool bStreaming=false)</td></tr>
+<tr class="memdesc:af58ad6df4031201e76f98b208da3b35d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schrijf een waarde naar de DAC.  <br /></td></tr>
 <tr class="separator:af58ad6df4031201e76f98b208da3b35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3033053f5eedfa654e63768b301c1b33" id="r_a3033053f5eedfa654e63768b301c1b33"><td class="memItemLeft" align="right" valign="top"><a id="a3033053f5eedfa654e63768b301c1b33" name="a3033053f5eedfa654e63768b301c1b33"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>disableAnalogOutput</b> ()</td></tr>
+<tr class="memdesc:a3033053f5eedfa654e63768b301c1b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zet de analoge output van de DAC in tri-state mode, bijvoorbeeld om stroom te besparen. <br /></td></tr>
 <tr class="separator:a3033053f5eedfa654e63768b301c1b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8047d0380ed1720272822a4d4d30bfa" id="r_ae8047d0380ed1720272822a4d4d30bfa"><td class="memItemLeft" align="right" valign="top"><a id="ae8047d0380ed1720272822a4d4d30bfa" name="ae8047d0380ed1720272822a4d4d30bfa"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>endStreaming</b> ()</td></tr>
+<tr class="memdesc:ae8047d0380ed1720272822a4d4d30bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">endStreaming beeindigt de lopende transactie op de communicatiebus (bijvoorbeeld I2C), zodat de communicatiebus weer wordt vrijgegeven voor nieuwe transacties. <br /></td></tr>
 <tr class="separator:ae8047d0380ed1720272822a4d4d30bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -164,8 +166,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>endStreaming</b> ()</
       </table>
 </div><div class="memdoc">
 
-<p>enum voor AIN to channel mapping keuze </p>
-<p>AIN_N_TO_CHANNEL_N -&gt; Elke Analoge input wordt 1 op 1 gemapt naar één kanaal. AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2 -&gt; De mate waarin AIN0, AIN1 en AIN2 groter zijn dan AIN3 wordt gemapt naar kanaal 0, 1 en 2. AIN0_1_TO_CHANNEL_0_1__AIN2_MINUS_AIN3_TO_CHANNEL_2 -&gt; Analoge inputs 0 en 1 worden 1 op 1 gemapt naar kanaal 0 en 1. AIN1_MINUS_AIN0_TO_CHANNEL_0__AIN2_MINUS_AIN3__TO_CHANNEL_1 -&gt; Het verschil tussen AIN0 en AIN1 en het verschil tussen AIN2 en AIN3 wordt gemapt naar kanaal 0 en 1 </p>
+<p>Keuze voor het mappen van AIN-signalen naar outputkanalen. </p>
+<p>Dit enum definieert verschillende manieren om de vier analoge inputs (AIN0–AIN3) om te zetten naar maximaal vier kanalen.</p>
+<p>Mogelijke waarden:</p><ul>
+<li><b>AIN_N_TO_CHANNEL_N</b> <br  />
+ Elke AIN<sub>i</sub> → kanaal <em>.</em></li>
+<li><em><b>AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2</b> <br  />
+ (AIN0, AIN1, AIN2) − AIN3 → kanalen 0, 1, 2.</em></li>
+<li><em><b>AIN0_1_TO_CHANNEL_0_1__AIN2_MINUS_AIN3_TO_CHANNEL_2</b> <br  />
+ AIN0 → kanaal 0, AIN1 → kanaal 1, (AIN2 − AIN3) → kanaal 2.</em></li>
+<li><em><b>AIN1_MINUS_AIN0_TO_CHANNEL_0__AIN2_MINUS_AIN3__TO_CHANNEL_1</b> <br  />
+ (AIN1 − AIN0) → kanaal 0, (AIN2 − AIN3) → kanaal 1. </em></li>
+</ul>
 
 </div>
 </div>
@@ -197,6 +209,65 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>endStreaming</b> ()</
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9aca71ac41ad6dc962a39537893197e7" name="a9aca71ac41ad6dc962a39537893197e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aca71ac41ad6dc962a39537893197e7">&#9670;&#160;</a></span>readChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t hogeschool::PCF8591::readChannel </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>channel</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>bStreaming</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lees een waarde uit een kanaal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>de index het kanaal (beginnend bij 0). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>16-bit waarde die uit de ADC wordt gelezen. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bStreaming</td><td>Indien streaming, wordt na het lezen van de value de I2C transactie niet afgesloten, zodat eropvolgende readChannel calls maximaal efficient kunnen zijn. Je moet dan wel als je eenmaal klaar bent met de readChannel commando's, zelf <a class="el" href="#ae8047d0380ed1720272822a4d4d30bfa" title="endStreaming beeindigt de lopende transactie op de communicatiebus (bijvoorbeeld I2C),...">endStreaming()</a> aanroepen. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afaa040ac95a80718806d5cf84cd2791d" name="afaa040ac95a80718806d5cf84cd2791d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaa040ac95a80718806d5cf84cd2791d">&#9670;&#160;</a></span>readCyclical()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t hogeschool::PCF8591::readCyclical </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t &amp;</td>          <td class="paramname"><span class="paramname"><em>channelThatWasRead</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lees cyclisch waarden uit alle kanalen. Dus de eerste call leest uit het kanaal met index 0. De tweede leest uit de volgende, etc. Na lezen uit het kanaal met de hoogste index is de het kanaal met index 0 weer aan de beurt. </p>
+<dl class="section return"><dt>Returns</dt><dd>16-bit waarde die uit het kanaal wordt gelezen. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Dit commando werkt streaming. Roep dus nadat je klaar bent met readCyclical calls de functie <a class="el" href="#ae8047d0380ed1720272822a4d4d30bfa" title="endStreaming beeindigt de lopende transactie op de communicatiebus (bijvoorbeeld I2C),...">endStreaming()</a> aan. </dd>
+<dd>
+Als het betreffende kanaal voortkomt uit een differentiele mapping van analoge inputs, zoals AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2, dan moet je de uint_8 eerst nog een reinterpret_cast geven naar int8_t. </dd></dl>
+
+</div>
+</div>
 <a id="a0ad173039614668ae807363810c88cf8" name="a0ad173039614668ae807363810c88cf8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ad173039614668ae807363810c88cf8">&#9670;&#160;</a></span>setAinToChannelMapping()</h2>
 
@@ -215,10 +286,41 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>endStreaming</b> ()</
 <p>AIN pin naar channel mapping. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a62d8c184d49da50f0f2aefd71e1aa7a0" title="enum voor AIN to channel mapping keuze">AinToChannelMapping</a></td><td>Via deze parameter kan de mapping worden gespecificeerd. </td></tr>
+    <tr><td class="paramname"><a class="el" href="#a62d8c184d49da50f0f2aefd71e1aa7a0" title="Keuze voor het mappen van AIN-signalen naar outputkanalen.">AinToChannelMapping</a></td><td>Via deze enum parameter kan de mapping van analoge input (pin)s naar kanalen worden gespecificeerd (zie de enum documentatie). </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="af58ad6df4031201e76f98b208da3b35d" name="af58ad6df4031201e76f98b208da3b35d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af58ad6df4031201e76f98b208da3b35d">&#9670;&#160;</a></span>writeDAC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hogeschool::PCF8591::writeDAC </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>bStreaming</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Schrijf een waarde naar de DAC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>16-bit waarde die naar de DAC wordt gestuurd. </td></tr>
+    <tr><td class="paramname">bStreaming</td><td>Indien streaming, wordt na het schrijven van de value de I2C transactie niet afgesloten, zodat eropvolgende writeDAC calls maximaal efficient kunnen zijn. Je moet dan wel als je eenmaal klaar bent met de writeDAC commando's, zelf <a class="el" href="#ae8047d0380ed1720272822a4d4d30bfa" title="endStreaming beeindigt de lopende transactie op de communicatiebus (bijvoorbeeld I2C),...">endStreaming()</a> aanroepen. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>Als het betreffende kanaal voortkomt uit een differentiele mapping van analoge inputs, zoals AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2, dan moet je de uint_8 eerst nog een reinterpret_cast geven naar int8_t. </dd></dl>
 
 </div>
 </div>
