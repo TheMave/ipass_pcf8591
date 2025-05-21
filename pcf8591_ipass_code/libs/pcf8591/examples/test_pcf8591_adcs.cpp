@@ -119,6 +119,55 @@ void testGestreamedLezenVanADCs()
   }
 }
 
+void test_AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2()
+{
+  Serial.println();
+  Serial.println("****************************************************");
+  Serial.println("Test: lezen met AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2");
+  Serial.println("****************************************************");
+
+  while(true)  
+  {
+    Serial.println("Eerst lezen we de kanalen apart, dus nog met");
+    Serial.println("AIN_N_TO_CHANNEL_N mapping.");
+    
+    pcf8591.setAinToChannelMapping(hs::PCF8591::AinToChannelMapping::AIN_N_TO_CHANNEL_N);
+    
+    for (int i = 0; i < maxNofChannels; i++) 
+    {
+      uint8_t value = pcf8591.readChannel(i);
+            
+      // Print de waarde naar de serial monitor
+      Serial.print("AIN");
+      Serial.print(i);
+      Serial.print(": ");
+      Serial.println(value);
+    }
+
+    pcf8591.setAinToChannelMapping(hs::PCF8591::AinToChannelMapping::AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2);
+    
+    Serial.println("Dit worden dan de kanalen met mapping:");
+    for (int i = 0; i < (maxNofChannels-1); i++) 
+    {
+      // nb kanaal is nu diff ingesteld. kan dus negatief worden.
+      int8_t value = pcf8591.readChannel(i);
+            
+      // Print de waarde naar de serial monitor
+      Serial.print("Kanaal");
+      Serial.print(i);
+      Serial.print(": ");
+      Serial.println(value);
+    }
+    
+    Serial.println("--------");
+
+    // Wacht even, anders komt er meer data naar de serial monitor dan die
+    // kan verwerken. (bovendien vliegt het dan te snel voorbij om te kunnen lezen)
+    bool bStopToetsIngedrukt = hs::SerialInput::wachtEnCheckToets(/*toets*/ 'v', /*nofMilliseconden*/ 2000);
+    if(bStopToetsIngedrukt) break;
+  }
+}
+
 void setup() 
 {
   Serial.begin(serialBaudRate);
@@ -140,4 +189,5 @@ void loop()
   testApartLezenVanADCs();
   testGestreamedLezenVanADCs();
   testCyclischLezenVanADCs();
+  test_AIN0_1_2_MINUS_AIN3_TO_CHANNEL_0_1_2();
 }

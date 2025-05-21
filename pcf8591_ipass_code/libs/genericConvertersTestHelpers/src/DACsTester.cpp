@@ -2,7 +2,7 @@
 #include <Wire.h>
 #include <pcf8591.h>
 #include <serialInput.h>
-#include <testHelpers/DACsTester.h>
+#include <DACsTester.h>
 
 namespace hogeschool
 {

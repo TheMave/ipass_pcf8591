@@ -1,6 +1,6 @@
 #include "Arduino.h"
 #include <genericPcf8591.h>
-#include <testHelpers/DACsTester.h>
+#include <DACsTester.h>
 
 // We willen geen magic constants, dus definiëren we alle constants hier.
 const uint8_t   PCF8591_address = 0x48; // Mits A0, A1 en A2 met ground 

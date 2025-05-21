@@ -29,17 +29,17 @@ namespace hogeschool
     }
 
     // IADCdiff
-    uint16_t GenericPCF8591::readADCdiff (uint8_t adcDiffIndex, bool bStreaming)
+    int16_t GenericPCF8591::readADCdiff (uint8_t adcDiffIndex, bool bStreaming)
     {
         _pcf8591.setAinToChannelMapping(PCF8591::AinToChannelMapping::AIN0_1_TO_CHANNEL_0_1__AIN2_MINUS_AIN3_TO_CHANNEL_2);
-        int16_t value = _pcf8591.readChannel(adcDiffIndex, bStreaming);
+        int16_t value = static_cast<int16_t>(_pcf8591.readChannel(adcDiffIndex, bStreaming));
         return value<<bitShift;
     }
 
     int16_t GenericPCF8591::readADCdiffsCyclical (uint8_t& adcDiffThatWasRead)
     {
         _pcf8591.setAinToChannelMapping(PCF8591::AinToChannelMapping::AIN0_1_TO_CHANNEL_0_1__AIN2_MINUS_AIN3_TO_CHANNEL_2);
-        int16_t value = _pcf8591.readCyclical(adcDiffThatWasRead);
+        int16_t value =static_cast<int16_t>(_pcf8591.readCyclical(adcDiffThatWasRead));
         return value<<bitShift;
     }
 

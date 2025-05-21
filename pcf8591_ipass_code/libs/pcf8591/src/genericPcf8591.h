@@ -53,7 +53,7 @@ namespace hogeschool
     uint8_t getNofADCs() override;
 
     /// IADCdiff
-    uint16_t readADCdiff (uint8_t adcDiffIndex, bool bStreaming) override;
+    int16_t readADCdiff (uint8_t adcDiffIndex, bool bStreaming) override;
     int16_t readADCdiffsCyclical (uint8_t& adcDiffThatWasRead) override;
     uint8_t getNofADCdiffs() override;
 

@@ -33,7 +33,7 @@ namespace hogeschool
          * Je moet dan wel als je eenmaal klaar bent met de readADCdiff
          * commando's, zelf endStreaming() aanroepen.
          */
-        virtual uint16_t readADCdiff (uint8_t adcDiffIndex, bool bStreaming) = 0;
+        virtual int16_t readADCdiff (uint8_t adcDiffIndex, bool bStreaming) = 0;
 
         /**
          * @brief Lees cyclisch de verschilwaarden uit alle ADC-input-paartjes.
